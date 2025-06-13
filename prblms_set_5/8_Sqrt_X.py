@@ -1,4 +1,4 @@
-# 69. Sqrt(x) (Easy)
+# 69. Sqrt(x) (Easy) - Done
 # https://leetcode.com/problems/sqrtx
 
 class Solution:
