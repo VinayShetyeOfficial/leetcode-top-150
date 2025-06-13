@@ -1,4 +1,4 @@
-# 190. Reverse Bits (Easy)
+# 190. Reverse Bits (Easy) - Done
 # https://leetcode.com/problems/reverse-bits
 
 class Solution:
