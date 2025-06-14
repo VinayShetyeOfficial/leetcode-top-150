@@ -1,4 +1,4 @@
-# 112. Path Sum
+# 112. Path Sum (Easy) - Done
 # https://leetcode.com/problems/path-sum
 
 class Solution:
