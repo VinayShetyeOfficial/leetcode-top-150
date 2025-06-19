@@ -1,4 +1,4 @@
-# 16. 3Sum Closest (Medium) - Done
+# 16. 3Sum Closest (Medium)
 # https://leetcode.com/problems/3sum-closest/
 
 class Solution:
