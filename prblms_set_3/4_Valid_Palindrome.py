@@ -1,4 +1,4 @@
-# 125. Valid Palindrome (Easy) - Done
+# 125. Valid Palindrome (Easy)
 # https://leetcode.com/problems/valid-palindrome
 
 class Solution:
