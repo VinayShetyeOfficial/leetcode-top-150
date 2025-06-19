@@ -1,4 +1,4 @@
-# 383. Ransom Note (Easy) - Done
+# 383. Ransom Note (Easy)
 # https://leetcode.com/problems/ransom-note
 
 from collections import Counter
