@@ -1,4 +1,4 @@
-# 6. Zigzag Conversion (Medium) - Done
+# 6. Zigzag Conversion (Medium)
 # https://leetcode.com/problems/zigzag-conversion
 
 class Solution:
