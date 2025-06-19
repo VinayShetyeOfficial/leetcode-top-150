@@ -1,4 +1,4 @@
-# 290. Word Pattern (Easy) - Done
+# 290. Word Pattern (Easy)
 # https://leetcode.com/problems/word-pattern
 
 class Solution:
