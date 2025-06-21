@@ -1,4 +1,4 @@
-# 1. Two Sum (Easy) - Done
+# 1. Two Sum (Easy)
 # https://leetcode.com/problems/two-sum
 
 class Solution:
