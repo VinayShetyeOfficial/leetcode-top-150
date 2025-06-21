@@ -1,5 +1,5 @@
 # 67. Add Binary (Easy)
-# https://leetcode.com/problems/add-binary - Done
+# https://leetcode.com/problems/add-binar
 
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
