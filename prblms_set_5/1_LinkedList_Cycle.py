@@ -1,4 +1,4 @@
-# 141. Linked List Cycle (Easy) - Done
+# 141. Linked List Cycle (Easy)
 # https://leetcode.com/problems/linked-list-cycle
 
 # Definition for singly-linked list.
