@@ -1,4 +1,4 @@
-# 202. Happy Number (Easy) - Done
+# 202. Happy Number (Easy)
 # https://leetcode.com/problems/happy-number
 
 class Solution:
