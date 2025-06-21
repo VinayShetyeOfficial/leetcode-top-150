@@ -1,4 +1,4 @@
-# 35. Search Insert Position (Easy) - Done
+# 35. Search Insert Position (Easy)
 # https://leetcode.com/problems/search-insert-position
 
 class Solution:
