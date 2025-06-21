@@ -1,4 +1,4 @@
-# 70. Climbing Stairs (Easy) - Done
+# 70. Climbing Stairs (Easy)
 # https://leetcode.com/problems/climbing-stairs
 
 class Solution:
