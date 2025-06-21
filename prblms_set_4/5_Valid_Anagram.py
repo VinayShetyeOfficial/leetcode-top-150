@@ -1,4 +1,4 @@
-# 242. Valid Anagram (Easy) - Done
+# 242. Valid Anagram (Easy)
 # https://leetcode.com/problems/valid-anagram
 
 class Solution:
