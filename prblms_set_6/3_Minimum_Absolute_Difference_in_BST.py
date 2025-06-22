@@ -1,4 +1,4 @@
-# 530. Minimum Absolute Difference in BST (Easy) - Done
+# 530. Minimum Absolute Difference in BST (Easy)
 # https://leetcode.com/problems/minimum-absolute-difference-in-bst
 
 # Definition for a binary tree node.
