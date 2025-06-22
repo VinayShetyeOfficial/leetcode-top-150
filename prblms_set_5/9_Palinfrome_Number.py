@@ -1,4 +1,4 @@
-# 9. Palindrome Number (Easy) - Done
+# 9. Palindrome Number (Easy)
 # https://leetcode.com/problems/palindrome-number
 
 class Solution:
