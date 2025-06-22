@@ -1,4 +1,4 @@
-# 222. Count Complete Tree Nodes (Easy) - Done
+# 222. Count Complete Tree Nodes (Easy)
 # https://leetcode.com/problems/count-complete-tree-nodes
 
 from collections import deque
