@@ -1,4 +1,4 @@
-# 452. Minimum Number of Arrows to Burst Balloons (Medium) - Done
+# 452. Minimum Number of Arrows to Burst Balloons (Medium)
 # https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons
 
 class Solution:
