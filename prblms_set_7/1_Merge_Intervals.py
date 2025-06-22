@@ -31,7 +31,7 @@ class Solution:
 👉 For the result list (merged intervals)
 """
 
-# Alternate Solution
+# Alternate Solution:
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         intervals.sort(key=lambda x: x[0])
