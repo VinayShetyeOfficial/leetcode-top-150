@@ -1,4 +1,4 @@
-# 66. Plus One (Easy) - Done
+# 66. Plus One (Easy)
 # https://leetcode.com/problems/plus-one
 
 class Solution:
