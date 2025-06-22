@@ -1,4 +1,4 @@
-# 104. Maximum Depth of Binary Tree (Easy) - Done
+# 104. Maximum Depth of Binary Tree (Easy)
 # https://leetcode.com/problems/maximum-depth-of-binary-tree
 
 # Definition for a binary tree node.
