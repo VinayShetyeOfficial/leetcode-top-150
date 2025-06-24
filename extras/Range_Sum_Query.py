@@ -1,4 +1,4 @@
-# 303. Range Sum Query - Immutable (Easy)
+# 303. Range Sum Query - Immutable (Easy) - Done
 # https://leetcode.com/problems/range-sum-query-immutable
 
 def get_prefix_sum(arr):
