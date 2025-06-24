@@ -1,4 +1,4 @@
-# 560. Subarray Sum Equals K (Medium)
+# 560. Subarray Sum Equals K (Medium) - Done
 # https://leetcode.com/problems/subarray-sum-equals-k
 
 class Solution:
