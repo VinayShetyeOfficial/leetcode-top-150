@@ -1,4 +1,4 @@
-# 525. Contiguous Array (Medium)
+# 525. Contiguous Array (Medium) - Done
 # https://leetcode.com/problems/contiguous-array
 
 class Solution:
