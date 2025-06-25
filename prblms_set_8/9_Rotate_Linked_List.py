@@ -1,4 +1,4 @@
-# 61. Rotate List (Medium)
+# 61. Rotate List (Medium) - Done
 # https://leetcode.com/problems/rotate-list
 
 # Definition for singly-linked list.
