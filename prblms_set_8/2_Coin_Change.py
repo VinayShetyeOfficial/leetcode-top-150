@@ -14,3 +14,24 @@ class Solution:
                     dp[amt] = min(dp[amt], 1 + dp[amt - coin])
 
         return dp[amount] if dp[amount] != amount + 1 else -1
+
+
+"""
+✅ Time Complexity (TC):
+O(amount × n)
+
+Where:
+amount is the total amount we want to make,
+n is the number of different coin denominations.
+
+Explanation:
+You loop from 1 to amount → amount iterations.
+For each amount, you iterate through all coins → n iterations.
+So total operations = amount * n.
+
+✅ Space Complexity (SC):
+O(amount)
+
+Explanation:
+You use a 1D dp array of size amount + 1 to store the minimum coins required for each value from 0 to amount.
+"""
