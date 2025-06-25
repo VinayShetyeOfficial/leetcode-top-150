@@ -1,4 +1,4 @@
-# 50. Pow(x, n) (Medium)
+# 50. Pow(x, n) (Medium) - Done
 # https://leetcode.com/problems/powx-n
 
 class Solution:
