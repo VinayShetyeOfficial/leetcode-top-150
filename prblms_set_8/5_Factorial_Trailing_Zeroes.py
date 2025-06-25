@@ -1,4 +1,4 @@
-# 172. Factorial Trailing Zeroes (Medium)
+# 172. Factorial Trailing Zeroes (Medium) - Done
 # https://leetcode.com/problems/factorial-trailing-zeroes
 
 class Solution:
