@@ -1,4 +1,4 @@
-# 300. Longest Increasing Subsequence (Medium)
+# 300. Longest Increasing Subsequence (Medium) - Done
 # https://leetcode.com/problems/longest-increasing-subsequence
 
 class Solution:
