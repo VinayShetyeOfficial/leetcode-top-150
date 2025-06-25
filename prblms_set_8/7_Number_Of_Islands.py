@@ -1,4 +1,4 @@
-# Number of Islands (Medium)
+# Number of Islands (Medium) - Done
 # https://leetcode.com/problems/number-of-islands
 
 class Solution:
