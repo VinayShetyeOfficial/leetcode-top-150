@@ -1,4 +1,4 @@
-# 86. Partition List (Medium)
+# 86. Partition List (Medium) - Done
 # https://leetcode.com/problems/partition-list
 
 # Definition for singly-linked list.
