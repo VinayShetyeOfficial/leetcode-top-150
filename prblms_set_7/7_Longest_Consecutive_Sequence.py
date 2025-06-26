@@ -1,4 +1,4 @@
-# 128. Longest Consecutive Sequence (Medium)
+# 128. Longest Consecutive Sequence (Medium) - Done
 # https://leetcode.com/problems/longest-consecutive-sequence
 
 class Solution:
