@@ -1,4 +1,4 @@
-# 49. Group Anagrams (Medium)
+# 49. Group Anagrams (Medium) - Done
 # https://leetcode.com/problems/group-anagrams
 
 from collections import defaultdict
