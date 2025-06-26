@@ -1,4 +1,4 @@
-# 155. Min Stack (Medium)
+# 155. Min Stack (Medium) - Done
 # https://leetcode.com/problems/min-stack
 
 class MinStack:
