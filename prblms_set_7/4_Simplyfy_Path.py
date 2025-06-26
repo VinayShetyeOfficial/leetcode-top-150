@@ -1,4 +1,4 @@
-# 71. Simplify Path (Medium)
+# 71. Simplify Path (Medium) - Done
 # https://leetcode.com/problems/simplify-path
 
 class Solution:
