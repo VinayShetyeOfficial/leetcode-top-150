@@ -1,4 +1,4 @@
-# 191. Number of 1 Bits (Easy)
+# 191. Number of 1 Bits (Easy) - Done
 # https://leetcode.com/problems/number-of-1-bits
 
 class Solution:
