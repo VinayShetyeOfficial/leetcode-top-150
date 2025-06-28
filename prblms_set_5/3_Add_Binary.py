@@ -1,4 +1,4 @@
-# 67. Add Binary (Easy)
+# 67. Add Binary (Easy) - Done
 # https://leetcode.com/problems/add-binar
 
 class Solution:
