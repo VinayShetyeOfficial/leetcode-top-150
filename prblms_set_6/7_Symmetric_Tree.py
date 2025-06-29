@@ -1,4 +1,4 @@
-# 101. Symmetric Tree (Easy)
+# 101. Symmetric Tree (Easy) - Done
 # https://leetcode.com/problems/symmetric-tree
 
 # Definition for a binary tree node.
