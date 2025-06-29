@@ -1,4 +1,4 @@
-# 226. Invert Binary Tree (Easy)
+# 226. Invert Binary Tree (Easy) - Done
 # https://leetcode.com/problems/invert-binary-tree
 
 class Solution:
