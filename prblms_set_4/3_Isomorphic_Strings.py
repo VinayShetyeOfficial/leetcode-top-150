@@ -1,4 +1,4 @@
-# 205. Isomorphic Strings (Easy)
+# 205. Isomorphic Strings (Easy) - Done
 # https://leetcode.com/problems/isomorphic-strings
 
 class Solution:
