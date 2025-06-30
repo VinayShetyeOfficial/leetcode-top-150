@@ -1,4 +1,4 @@
-# 392. Is Subsequence (Easy)
+# 392. Is Subsequence (Easy) - Done
 # https://leetcode.com/problems/is-subsequence
 
 class Solution:
