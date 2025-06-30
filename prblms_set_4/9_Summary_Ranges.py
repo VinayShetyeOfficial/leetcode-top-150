@@ -1,4 +1,4 @@
-# 228. Summary Ranges (Easy)
+# 228. Summary Ranges (Easy) - Done
 # https://leetcode.com/problems/summary-ranges
 
 class Solution:
