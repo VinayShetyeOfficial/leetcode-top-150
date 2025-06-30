@@ -1,4 +1,4 @@
-# 15. 3Sum (Medium)
+# 15. 3Sum (Medium) - Done
 # https://leetcode.com/problems/3sum
 
 class Solution:
