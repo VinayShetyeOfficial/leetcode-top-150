@@ -1,4 +1,4 @@
-# 209. Minimum Size Subarray Sum (Medium)
+# 209. Minimum Size Subarray Sum (Medium) - Done
 # https://leetcode.com/problems/minimum-size-subarray-sum/
 
 class Solution:
