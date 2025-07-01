@@ -1,7 +1,17 @@
 # 167. Two Sum II - Input Array Is Sorted - Done
 # https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
+# Works for both Problems `Two Sum I & II` 
 class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        seen = {}
+
+        for idx, num in enumerate(numbers):
+            complement = target - num
+            if complement in seen:
+                return [seen[complement] + 1, idx + 1]
+            seen[num] = idx
+
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         """
