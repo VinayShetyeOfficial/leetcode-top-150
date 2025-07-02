@@ -12,6 +12,8 @@ class Solution:
                 return [seen[complement] + 1, idx + 1]
             seen[num] = idx
 
+
+# Alternate Solution
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         """
