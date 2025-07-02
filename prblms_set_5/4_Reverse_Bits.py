@@ -3,6 +3,19 @@
 
 class Solution:
     def reverseBits(self, n: int) -> int:
+        res = 0
+        num = bin(n)[2:]
+        num32bit = '0' * (32 - len(num)) + num
+
+        for i in range(len(num32bit)):
+            res += 2 ** i if num32bit[i] == '1' else 0
+
+        return res
+    
+
+# Alternative Solution
+class Solution:
+    def reverseBits(self, n: int) -> int:
         """
         Reverses the bits of a 32-bit unsigned integer.
         Uses bitwise shifting and masking for efficiency.
