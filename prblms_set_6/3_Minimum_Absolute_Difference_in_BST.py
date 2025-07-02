@@ -39,5 +39,12 @@ class Solution:
 
 
 """
+✅ Time Complexity: O(n)
+👉 Every node is visited exactly once during the in-order traversal.
 
+✅ Space Complexity: O(h)
+👉 'h' is the height of the BST.
+👉 In the worst case (skewed tree), h = n → O(n)
+👉 In the best case (balanced tree), h = log n → O(log n)
+👉 So overall: O(h) auxiliary stack space due to recursion.
 """
