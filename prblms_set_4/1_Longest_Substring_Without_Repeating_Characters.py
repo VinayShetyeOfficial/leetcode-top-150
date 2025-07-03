@@ -44,5 +44,9 @@ class Solution:
         return res
     
 """
+✅ Time Complexity: O(n)
+👉 Each character is visited at most twice (once by right pointer, once by left)
 
+✅ Space Complexity: O(n)
+👉 Set stores up to n characters in the worst case (all unique)
 """
