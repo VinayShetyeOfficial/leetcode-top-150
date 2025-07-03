@@ -35,3 +35,12 @@ class Solution:
             freq[ord(ch_t) - ord('a')] -= 1
 
         return all(f == 0 for f in freq)
+
+
+"""
+✅ Time Complexity: O(n)
+👉 Each character from both strings is processed exactly once
+
+✅ Space Complexity: O(1)
+👉 Fixed-size frequency array (26 letters), independent of input size
+"""
