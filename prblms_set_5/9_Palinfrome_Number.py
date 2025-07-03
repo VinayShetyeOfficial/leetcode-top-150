@@ -22,8 +22,9 @@ class Solution:
 
 """
 ✅ Time Complexity: O(log₁₀ n)
-👉 One iteration per digit
+👉 We reverse the number digit by digit.
+👉 For a number with 'd' digits, the loop runs d times → O(log n)
 
 ✅ Space Complexity: O(1)
-👉 Constant space, no string conversion
+👉 Uses only a few variables (no extra space based on input size)
 """
