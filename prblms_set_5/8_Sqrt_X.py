@@ -42,3 +42,12 @@ class Solution:
                 break 
                 
         return int(res)
+    
+    
+"""
+✅ Time Complexity: O(log x)
+👉 Newton's Method converges very fast — roughly in log x iterations.
+
+✅ Space Complexity: O(1)
+👉 Uses constant extra space (only a few variables).
+"""
