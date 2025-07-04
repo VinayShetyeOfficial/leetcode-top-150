@@ -41,4 +41,12 @@ class Solution:
         
         return rob_house
     
+
+"""
+✅ Time Complexity: O(n)
+👉 Iterates through the list of house values once
+
+✅ Space Complexity: O(1)
+👉 Uses only constant extra space (two variables)
+"""
     
