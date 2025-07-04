@@ -57,3 +57,11 @@ class Solution:
                 current_jump_end = farthest_reach
 
         return jumps
+
+"""
+✅ Time Complexity: O(n)
+👉 Each index is visited once — linear traversal
+
+✅ Space Complexity: O(1)
+👉 Uses only a few variables for tracking — no extra data structures
+"""
