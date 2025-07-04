@@ -14,6 +14,16 @@ class Solution:
         if not root:
             return 0
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+
+
+"""
+✅ Time Complexity: O(n)
+👉 Every node is visited once
+
+✅ Space Complexity: O(h)
+👉 h = height of tree = recursion stack depth
+👉 Worst case: O(n) for skewed tree, O(log n) for balanced tree
+"""
     
 #--------------------------------------------------------------------------
 # Alternative Solution
@@ -44,7 +54,16 @@ class Solution:
                 
             level += 1
         return level
-    
+
+"""
+✅ Time Complexity: O(n)
+👉 Each node is processed once
+
+✅ Space Complexity: O(w)
+👉 w = maximum width of the tree (number of nodes at the widest level)
+👉 Worst case: O(n) for a full binary tree (last level has ~n/2 nodes)
+"""
+
 #--------------------------------------------------------------------------
 # Definition for a binary tree node.
 # class TreeNode:
@@ -68,4 +87,12 @@ class Solution:
                 stack.append([node.right, depth + 1])
         return res
     
+"""
+✅ Time Complexity: O(n)
+👉 Every node is visited once
+
+✅ Space Complexity: O(h)
+👉 h = max height of the tree = max stack size
+👉 Worst case: O(n) for skewed tree, O(log n) for balanced tree
+"""
     
