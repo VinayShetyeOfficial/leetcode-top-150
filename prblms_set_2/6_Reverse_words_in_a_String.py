@@ -33,4 +33,19 @@ class Solution:
         Returns a single space-separated string with words in reverse order.
         """
         return ' '.join(s.split()[::-1])
+
+
+"""
+✅ Time Complexity: O(n)
+👉 Each character is visited a constant number of times:
+    - split: O(n)
+    - reverse: O(n)
+    - join: O(n)
+
+✅ Space Complexity: O(n)
+👉 Additional space for:
+    - list of words
+    - reversed list
+    - final result string
+"""
   
