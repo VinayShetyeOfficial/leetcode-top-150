@@ -51,3 +51,17 @@ class Solution:
             i += 1
 
         return res
+
+
+"""
+✅ Time Complexity: O(n log n)
+👉 Sorting the intervals by start time takes O(n log n)
+👉 One pass merging intervals takes O(n)
+👉 Total complexity dominated by sorting: O(n log n)
+
+
+✅ Space Complexity: O(n)
+👉 The output list `res` stores the merged intervals and can be up to size n (no merges)
+👉 Sorting typically uses O(log n) space due to recursion stack in Timsort (Python’s sort)
+👉 Overall space complexity: O(n)
+"""
