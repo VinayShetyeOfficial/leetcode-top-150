@@ -47,6 +47,14 @@ class Solution:
 
         return True
 
+"""
+✅ Time Complexity: O(m + n)
+👉 m = length of magazine, n = length of ransomNote
+👉 One pass to build frequency, one pass to consume it
+
+✅ Space Complexity: O(1)
+👉 Fixed-size array of 26 letters (constant space), does not grow with input
+""
 
 
  
