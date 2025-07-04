@@ -69,3 +69,12 @@ class Solution:
         print(res)
         
         return sum(res)
+
+
+"""
+✅ Time Complexity: O(n)
+👉 Three linear passes: left max, right max, result sum
+
+✅ Space Complexity: O(n)
+👉 Two extra arrays (maxLeft and maxRight) of size n
+"""
