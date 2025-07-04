@@ -38,4 +38,13 @@ class Solution:
                 i += 1
 
         return i == len(s)
+
+
+"""
+✅ Time Complexity: O(n)
+👉 You scan through string `t` once, where n = len(t)
+
+✅ Space Complexity: O(1)
+👉 Uses constant space (just index variables)
+"""
         
