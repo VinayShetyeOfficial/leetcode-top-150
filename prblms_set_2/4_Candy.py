@@ -47,3 +47,10 @@ class Solution:
         
         return sum(arr)
 
+"""
+✅ Time Complexity: O(n)
+👉 Two linear passes over the list
+
+✅ Space Complexity: O(n)
+👉 Extra array `arr` stores candies for each child
+"""
