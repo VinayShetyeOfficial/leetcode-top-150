@@ -48,3 +48,11 @@ class Solution:
                 queue.append(node.right)
 
         return root
+
+"""
+✅ Time Complexity: O(n)
+👉 Every node is visited exactly once
+
+✅ Space Complexity: O(n)
+👉 In the worst case, the queue can hold up to n/2 nodes (last level of a full binary tree)
+"""
