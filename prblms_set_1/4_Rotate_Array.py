@@ -49,3 +49,11 @@ class Solution(object):
             nums[:] = nums[len(nums)-k:] + nums[0:len(nums)-k]
             
         return nums
+
+"""
+✅ Time Complexity: O(n)
+👉 Slice and concatenation each take O(n), where n = len(nums)
+
+✅ Space Complexity: O(n)
+👉 nums[len(nums)-k:] + nums[0:len(nums)-k] creates a temporary copy of the list
+"""
