@@ -51,5 +51,18 @@ class Solution:
             i += 1
 
         return res
+
+"""
+✅ Time Complexity: O(n log n)
+👉 Sorting the intervals takes O(n log n)
+👉 The merging loop runs in O(n), linear scan after sorting
+
+
+✅ Space Complexity: O(n)
+👉 Output list `res` can contain up to n intervals (in worst case no merges)
+👉 Sorting typically requires O(log n) space (depending on sorting algorithm)
+👉 Overall dominated by output list space
+"""
+
     
 
