@@ -40,3 +40,11 @@ class Solution:
             res = n if count[n] > maxCount else res
             maxCount = max(count[n], maxCount)
         return res
+
+"""
+✅ Time Complexity: O(n)
+👉 Each number in the array is visited once
+
+✅ Space Complexity: O(n)
+👉 Hash map stores up to n unique elements in the worst case (all numbers different)
+"""
