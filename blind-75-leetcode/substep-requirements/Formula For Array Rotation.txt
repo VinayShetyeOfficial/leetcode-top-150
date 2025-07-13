@@ -1,0 +1,22 @@
+Given
+-----
+Array = [1, 2, 3, 4, 5, 6]
+n = len(my_list)
+k = 5                       
+
+Left to Right
+-------------
+new_index = (current_index + k) % n
+
+
+Right to Left
+-------------
+new_index = (current_index + k + n) % n
+
+
+Legend:
+- current_index: Index of the item before rotation.
+- k: Number of times the list is rotated to the right/left.
+- len(my_list): Total length of the list.
+- %: Makes sure the index wraps around if it goes beyond the length.
+
