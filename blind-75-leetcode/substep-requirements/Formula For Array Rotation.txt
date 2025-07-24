@@ -11,7 +11,7 @@ new_index = (current_index + k) % n
 
 Right to Left
 -------------
-new_index = (current_index + k + n) % n
+new_index = (current_index - k + n) % n
 
 
 Legend:
