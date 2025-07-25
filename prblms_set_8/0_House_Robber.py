@@ -1,6 +1,5 @@
-# 198. House Robber (Medium) - Done
+# 198. House Robber (Medium) 
 # https://leetcode.com/problems/house-robber/
-
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
@@ -34,19 +33,23 @@ No extra space used. Just two variables are updated in each iteration.
 # Alternative Solution
 class Solution:
     def rob(self, nums: List[int]) -> int:
+        # rob_house stores the max amount robbed so far including the current house
+        # adjacent_house stores the max amount robbed excluding the current house
         rob_house, adjacent_house = 0, 0
 
-        for val in nums:
-            rob_house, adjacent_house = max(val + adjacent_house, rob_house), rob_house
-        
+        for money in nums:
+            # Update rob_house and adjacent_house based on current house's money
+            rob_house, adjacent_house = max(money + adjacent_house, rob_house), rob_house
+
+        # Dry run explanation (for input: [2, 7, 9, 3, 1]):
+        # money     | rob_house (after max) | adjacent_house (previous rob_house)
+        # --------- | ---------------------- | ----------------------------------
+        # 2         | max(2+0, 0) = 2        | 0
+        # 7         | max(7+0, 2) = 7        | 2
+        # 9         | max(9+2, 7) = 11       | 7
+        # 3         | max(3+7, 11) = 11      | 11
+        # 1         | max(1+11, 11) = 12     | 11
+
         return rob_house
     
-
-"""
-✅ Time Complexity: O(n)
-👉 Iterates through the list of house values once
-
-✅ Space Complexity: O(1)
-👉 Uses only constant extra space (two variables)
-"""
     
