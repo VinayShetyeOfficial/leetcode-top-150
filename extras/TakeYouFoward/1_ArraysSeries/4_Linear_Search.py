@@ -51,35 +51,21 @@ if __name__ == '__main__':
 # ==============================================================
 # Using inbuilt `bisect method`
 
-import random
+import bisect
 
-#
-def compute(nums: list[int]) -> None:
-    nums.sort()
-    
-    left, right = 0, len(nums) - 1
-    target = random.choice(nums)
-    print(f'Nums: {nums}, target: {target}')
-    
-    while left <= right:
-        mid = (left + right) // 2
-        if nums[mid] == target:
-            print(mid)
-            break
-        elif nums[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-    else:       
-        print(-1)
+arr = [2, 4, 6, 8, 10, 12]
+target = 8
 
-if __name__ == '__main__':
-    arr = [random.randint(1, 100) for _ in range(10)]
-    compute(arr)
+index = bisect.bisect_left(arr, target)
 
+if index < len(arr) and arr[index] == target:
+    print(f"Element found at index {index}")
+else:
+    print("Element not found")
 
+'''
 | Method                 | Purpose                                         |
 | ---------------------- | ----------------------------------------------- |
 | `bisect_left(arr, x)`  | Gives index to insert `x` on the **left side**  |
 | `bisect_right(arr, x)` | Gives index to insert `x` on the **right side** |
-
+'''
