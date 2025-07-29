@@ -18,4 +18,10 @@ if __name__ == '__main__':
     print(f"Result: {frequencySort(s)}")  # Output: ['e', 'r', 't']
 
     s2 = "raaaajj"  #{'r': 1, 'a': 4, 'j': 2}
-    print(f"Result: {frequencySort(s2)}")  # Output: ['a', 'j', 'r']
+    print(f"Result: {frequencySort(s2)}")  # Output: ['a', 'j', 'r
+
+'''
+Note:
+We use -charFreq[char] to sort by highest frequency first
+The second part char (no -) is used to break ties alphabetically if two characters have the same frequency
+'''
