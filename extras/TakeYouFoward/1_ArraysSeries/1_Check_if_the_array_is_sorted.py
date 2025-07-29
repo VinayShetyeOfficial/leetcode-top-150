@@ -1,18 +1,16 @@
 # To check if number list is sorted or not [Ascending or Descending Order]
 
-# For Ascending:
-def isSortedAscending(arr):
-    for i in range(1, len(arr)):
-        if arr[i] < arr[i - 1]:
-            return False
-    return True
+# Ascending order check
+for index in range(1, len(nums)):
+    if nums[index - 1] > nums[index]:        # Check for instance where condition fails
+        return False
+return True
 
-# For Descending:
-def isSortedDescending(arr):
-    for i in range(1, len(arr)):
-        if arr[i] > arr[i - 1]:
-            return False
-    return True
+# Descending order check
+for index in range(1, len(nums)):
+    if nums[index - 1] < nums[index]:        # Check for instance where condition fails
+        return False
+return True
 
 # For General:
 def isSorted(arr):
