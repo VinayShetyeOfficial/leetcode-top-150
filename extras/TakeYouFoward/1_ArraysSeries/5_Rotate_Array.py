@@ -15,6 +15,7 @@ if __name__ == "__main__":
 
 # Rotated Array: [2, 3, 4, 5, 1]
 
+# =====================================================
 
 def rotateArray(nums: list[int], k: int) -> list[int]:
     n = len(nums)
@@ -32,3 +33,30 @@ if __name__ == "__main__":
     print(f'Rotated Array: {rotateArray(arr, 3)}')
     
 # Rotated Array: [3, 4, 5, 1, 2]              - Right Rotation
+
+'''
+🔄 Why do we use "+n" in (i - k + n) % n during left rotation?
+
+When rotating an array to the left, calculating new positions like (i - k) can sometimes go negative.
+For example:
+    n = 6
+    i = 1, 
+    k = 3 → (1 - 3) % 6 = -2 % 6
+    
+    divident = divisor * quotient + remainder
+    -2 = 6 * (-1) + remainder
+    +6 - 2 = remainder
+    remainder = 4
+    
+If you directly do -2 % n, Python handles it nicely and gives a positive index.
+But in other languages like C, C++, or Java, -2 % n gives a negative result, which causes index errors.
+
+✅ So, adding `+n` makes it safe and always gives a valid non-negative index:
+    (i - k + n) % n
+
+This trick ensures your rotation logic works cleanly and consistently across different languages.
+
+📌 Summary:
+- 👉 Right Rotation (clockwise):     (i + k) % n
+- 👉 Left Rotation (anti-clockwise): (i - k + n) % n
+'''
