@@ -2,26 +2,28 @@
 # https://leetcode.com/problems/insert-interval
 
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        # Step 1: Sort intervals by start time
-        intervals.sort(key=lambda x: x[0])
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        res = []
 
-        # Step 2: Initialize result with the first interval
-        merged = [intervals[0]]
+        for interval in intervals:
+            # Case 1: New interval is completely before the current interval
+            if newInterval[1] < interval[0]:
+                res.append(newInterval)
+                return res + intervals[intervals.index(interval):]
 
-        # Step 3: Iterate through the rest of the intervals
-        for start, end in intervals[1:]:
-            lastEnd = merged[-1][1]
+            # Case 2: New interval is completely after the current interval
+            elif newInterval[0] > interval[1]:
+                res.append(interval)
 
-            # If current interval overlaps with the last one in result
-            if start <= lastEnd:
-                # Merge by updating the end of last interval
-                merged[-1][1] = max(lastEnd, end)
+            # Case 3: Overlapping intervals — merge them
             else:
-                # No overlap → add new interval
-                merged.append([start, end])
+                newInterval[0] = min(newInterval[0], interval[0])
+                newInterval[1] = max(newInterval[1], interval[1])
 
-        return merged
+        # Add the merged interval if it hasn’t been added yet
+        res.append(newInterval)
+        return res
+
 
 """
 ✅ Time Complexity: O(n log n)
@@ -31,37 +33,4 @@ class Solution:
 👉 For the result list (merged intervals)
 """
 
-# Alternate Solution
-class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        intervals.sort(key=lambda x: x[0])
-        res = []
-        i = 0
 
-        while i < len(intervals):
-            start = intervals[i][0]
-            end = intervals[i][1]
-
-            # Extend 'end' as long as intervals overlap
-            while i + 1 < len(intervals) and intervals[i + 1][0] <= end:
-                i += 1
-                end = max(end, intervals[i][1])
-
-            res.append([start, end])
-            i += 1
-
-        return res
-
-
-"""
-✅ Time Complexity: O(n log n)
-👉 Sorting the intervals by start time takes O(n log n)
-👉 One pass merging intervals takes O(n)
-👉 Total complexity dominated by sorting: O(n log n)
-
-
-✅ Space Complexity: O(n)
-👉 The output list `res` stores the merged intervals and can be up to size n (no merges)
-👉 Sorting typically uses O(log n) space due to recursion stack in Timsort (Python’s sort)
-👉 Overall space complexity: O(n)
-"""
