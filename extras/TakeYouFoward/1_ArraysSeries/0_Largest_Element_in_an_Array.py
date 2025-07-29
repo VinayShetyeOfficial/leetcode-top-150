@@ -31,3 +31,31 @@ class Solution:
                 largestNumber = num
 
         return largestNumber
+#===================================================
+
+import random
+
+# Find Second-Largest/Second-Smallest Element in Array
+def compute(nums: list[int]) -> None:
+    smallest = second_smallest = float('inf')
+    largest = second_largestt = float('-inf')
+    
+    for num in nums:
+        if num < smallest:
+            second_smallest = smallest
+            smallest = num
+        elif smallest < num < second_smallest:
+            second_smallest = num
+            
+        if num > largest:
+            second_largest = largest
+            largest = num
+        elif largest > num > second_largest:
+            second_largest = num
+
+    print(second_smallest)
+    print(second_largest)
+
+if __name__ == '__main__':
+    arr = [random.randint(1, 100) for _ in range(10)]
+    ans = compute(arr)
