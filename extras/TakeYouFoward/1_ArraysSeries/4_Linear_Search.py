@@ -48,3 +48,38 @@ if __name__ == '__main__':
     arr = [random.randint(1, 100) for _ in range(10)]
     compute(arr)
     
+# ==============================================================
+# Using inbuilt `bisect method`
+
+import random
+
+#
+def compute(nums: list[int]) -> None:
+    nums.sort()
+    
+    left, right = 0, len(nums) - 1
+    target = random.choice(nums)
+    print(f'Nums: {nums}, target: {target}')
+    
+    while left <= right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            print(mid)
+            break
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    else:       
+        print(-1)
+
+if __name__ == '__main__':
+    arr = [random.randint(1, 100) for _ in range(10)]
+    compute(arr)
+
+
+| Method                 | Purpose                                         |
+| ---------------------- | ----------------------------------------------- |
+| `bisect_left(arr, x)`  | Gives index to insert `x` on the **left side**  |
+| `bisect_right(arr, x)` | Gives index to insert `x` on the **right side** |
+
