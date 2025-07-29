@@ -5,7 +5,7 @@ def longestCommonPrefix(strings: list[str]) -> str:
         currentChar = strings[0][i]
 
         for word in strings[1:]:
-            if word[i] != currentChar:
+            if i >= len(word) or word[i] != currentChar:
                 return strings[0][:i]
             
     return strings[0]
