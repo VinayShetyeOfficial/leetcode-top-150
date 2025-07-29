@@ -14,8 +14,8 @@ def frequencySort(s: str) -> list[str]:
 
 # Example usage:
 if __name__ == '__main__':
-    s = "tree"
+    s = "tree"  # {'t': 1, 'r': 1, 'e': 2}
     print(f"Result: {frequencySort(s)}")  # Output: ['e', 'r', 't']
 
-    s2 = "raaaajj"
+    s2 = "raaaajj"  #{'r': 1, 'a': 4, 'j': 2}
     print(f"Result: {frequencySort(s2)}")  # Output: ['a', 'j', 'r']
