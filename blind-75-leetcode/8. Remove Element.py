@@ -24,11 +24,16 @@ if __name__ == "__main__":
     nums1 = [3, 2, 2, 3]
     val1 = 3
     k1 = obj.removeElement(nums1, val1)
+    print(f'Input Array: {nums1}')
     print("Number of elements after removing {}: {}".format(val1, k1))
     print("Updated array:", nums1[:k1])
+    
+    print('')
     
     nums2 = [0, 1, 2, 2, 3, 0, 4, 2]
     val2 = 2
     k2 = obj.removeElement(nums2, val2)
+    print(f'Input Array: {nums2}')
     print("Number of elements after removing {}: {}".format(val2, k2))
     print("Updated array:", nums2[:k2])
+   
