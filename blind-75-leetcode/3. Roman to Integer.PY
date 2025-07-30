@@ -1,7 +1,5 @@
 # Link: https://leetcode.com/problems/roman-to-integer/description/
 
-
-
 # Roman to Integer
 class Solution(object):
     def romanToInt(self, s):
