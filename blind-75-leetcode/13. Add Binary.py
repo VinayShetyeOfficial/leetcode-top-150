@@ -1,6 +1,33 @@
 # Link: https://leetcode.com/problems/add-binary/description/
 
 #  Add Binary
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        result = ''
+        carry = 0
+
+        # Reverse the two strings for easier left-to-right processing
+        a, b = a[::-1], b[::-1]
+
+        # Loop through the longer of the two strings
+        for i in range(max(len(a), len(b))):    
+            digitA = int(a[i]) if i < len(a) else 0
+            digitB = int(b[i]) if i < len(b) else 0
+
+            total = digitA + digitB + carry
+            result = str(total % 2) + result # Add the current binary digit
+            carry = (total // 2) # update the carry
+
+        if carry:
+            result = '1' + result
+
+        return result 
+
+# ============================================================================
+
+# ⭐ From Scratch - Executable Code ⭐
+
+#  Add Binary
 class Solution(object):
     def addBinary(self, a, b):
         result = (self.bin_to_int(int(a)) + self.bin_to_int(int(b)))
