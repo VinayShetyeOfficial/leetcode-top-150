@@ -3,28 +3,6 @@
 # Find Smallest Letter Greater Than Target
 class Solution(object):
     def nextGreatestLetter(self, letters, target):
-        charArr = letters
-        
-        for c in charArr:
-            if c > target:
-                return c
-        
-        return letters[0]
-            
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    
-    letters = ["c","f","j","b", "a","e", "z"]
-    target = "s"
-    print(obj.nextGreatestLetter(letters, target))
-
-
-# ----------------------
-
-# Another Solution
-class Solution(object):
-    def nextGreatestLetter(self, letters, target):
         left, right = 0, len(letters) - 1
         
         # Edge case: If target is greater than or equal to the last character,
@@ -46,7 +24,30 @@ class Solution(object):
 if __name__ == '__main__':
     obj = Solution()
     
-    letters = ["c","f","j","b", "a","e", "z"]
+    letters = ['a', 'b', 'c', 'e', 'f', 'j', 'z']
+    target = "s"
+    print(obj.nextGreatestLetter(letters, target))
+
+
+# ============================================
+
+# Another Solution
+
+class Solution(object):
+    def nextGreatestLetter(self, letters, target):
+        charArr = letters
+        
+        for c in charArr:
+            if c > target:
+                return c
+        
+        return letters[0]
+            
+# Driver code
+if __name__ == '__main__':
+    obj = Solution()
+    
+    letters = ['a', 'b', 'c', 'e', 'f', 'j', 'z']
     target = "s"
     print(obj.nextGreatestLetter(letters, target))
     
