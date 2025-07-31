@@ -1,6 +1,32 @@
 # Link: https://leetcode.com/problems/flood-fill/description/
 
 # Flood Fill
+class Solution:
+    def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
+        ROWS, COLS = len(image), len(image[0])
+        originalColor = image[sr][sc]
+
+        if originalColor == color:
+            return image
+
+        def fill(i, j):
+            if (i < 0 or i >= ROWS or j < 0 or j >= COLS or image[i][j] != originalColor):
+                return
+
+            image[i][j] = color
+
+            fill(i + 1, j)
+            fill(i - 1, j)
+            fill(i, j + 1)
+            fill(i, j - 1)
+
+        fill(sr, sc)
+        return image
+    
+# ============================================
+
+# Alternate Solution    
+
 import numpy as np
 
 class Solution(object):
