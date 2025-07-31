@@ -1,7 +1,22 @@
 # Link: https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
 
 #  Intersection of Two Arrays II
-# ⭐ Solution1
+from collections import Counter
+
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        count1 = Counter(nums1)
+        result = []
+        for num in nums2:
+            if count1[num] > 0:
+                result.append(num)
+                count1[num] -= 1
+
+        return result        
+
+# ============================================
+
+# Alternate Solution
 from collections import Counter
 
 class Solution(object):
@@ -23,7 +38,7 @@ if __name__ == '__main__':
     nums2 = [1,1]
     print(obj.intersect(nums1, nums2))
 
-# ----------------------
+# ============================================
 
 # Another Solution
 class Solution(object):
