@@ -1,15 +1,18 @@
 # Link: https://leetcode.com/problems/valid-perfect-square/description/
 
 # Valid Perfect Square
-class Solution(object):
-    def sPerfectSquare(self, num):
-        left, right = 1, num
+class Solution:
+    def isPerfectSquare(self, num: int) -> bool:
+        if num < 2:
+            return True  # 0 and 1 are perfect squares
+
+        left, right = 2, num // 2
 
         while left <= right:
-            mid = (left + right)//2
-            square = mid*mid
+            mid = (left + right) // 2
+            square = mid * mid
 
-            if(square == num):
+            if square == num:
                 return True
             elif square < num:
                 left = mid + 1
@@ -17,9 +20,9 @@ class Solution(object):
                 right = mid - 1
 
         return False
+
         # return math.floor(num**0.5)**2 == num          # ⭐ Optional 
 
-    
 # Driver code
 if __name__ == '__main__':
     obj = Solution()
