@@ -18,4 +18,25 @@ if __name__ == '__main__':
     prices = [7,1,5,3,6,4]
     
     print(obj.maxProfit(prices))
+
+# =======================================================
+
+# Best Time to Buy and Sell Stock II
+
+class Solution(object):
+    def maxProfit(self, prices):
+        max_profit = 0
+        
+        for i in range(1, len(prices)):
+            if prices[i] > prices[i - 1]:
+                max_profit += prices[i] - prices[i - 1]
+                
+        return max_profit
+
+# Driver code
+if __name__ == '__main__':
+    obj = Solution()
+    prices = [7,1,5,3,6,4]
     
+    print(obj.maxProfit(prices))
+
