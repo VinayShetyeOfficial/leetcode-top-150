@@ -1,7 +1,28 @@
 # Links: https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/description/
 
 # Sort Integers by The Number of 1 Bits
-#  ⭐ Solution 1
+class Solution(object):
+    def bitCount(n):
+        count = 0
+        while n:
+            n &= (n - 1)
+            count += 1
+        return count
+
+    # Sort using tuple: (bit count, original value)
+    return sorted(arr, key = lambda x: (bitCount(x), x))
+
+# OR 
+
+class Solution:
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        
+        return sorted(arr, key=lambda num: (num.bit_count(), num))
+
+# =======================================================
+
+# Alternate Solution
+
 class Solution(object):
     def sortByBits(self, arr):
         def count_of_bits(num):
@@ -19,9 +40,10 @@ if __name__ == '__main__':
     arr = [1024,512,256,128,64,32,16,8,4,2,1]
     print(obj.sortByBits(arr))
 
-# ----------------------
+# =======================================================   
 
-# Another Solution
+# Alternate Solution
+
 class Solution(object):
     def sortByBits(self, arr):
         # Bubble Sort
