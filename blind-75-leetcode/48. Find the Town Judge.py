@@ -1,4 +1,4 @@
-# Link: `
+# Link: https://leetcode.com/problems/find-the-town-judge
 
 # Find the Town Judge
 class Solution:
@@ -16,7 +16,10 @@ class Solution:
         return -1
 
 
-=============================================================
+# =======================================================
+
+# Alternate Solution
+
 class Solution(object):
     def findJudge(self, n, trust):
         # Special case: if only one person in the town
