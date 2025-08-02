@@ -4,7 +4,15 @@
 #  ⭐ Solution 1
 class Solution(object):
     def findTheDistanceValue(self, arr1, arr2, d):
-        
+        count = 0
+        for num1 in arr1:
+            count += 1
+            for num2 in arr2:
+                if abs(num1 - num2) <= d:
+                    count -= 1
+                    break
+        return count
+    # OR 
         n = len(arr1)
         count = 0
         for x in arr1:
@@ -23,7 +31,7 @@ if __name__ == '__main__':
     d = 3
     print(obj.findTheDistanceValue(arr1, arr2, d))
 
-# ----------------------
+# =======================================================
 
 # Another Solution
 class Solution(object):
