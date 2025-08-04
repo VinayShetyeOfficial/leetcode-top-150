@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/second-largest-element
+
 # Find Second Smallest and Second Largest Element in an array
 
 def secondSmallest(arr, n):
