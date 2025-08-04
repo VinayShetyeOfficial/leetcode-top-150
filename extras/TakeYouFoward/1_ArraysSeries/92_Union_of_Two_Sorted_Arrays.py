@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/union-of-two-sorted-arrays
+
 # Union of Two Sorted Arrays
 
 def unionArray(nums1: list[int], nums2: list[int]) -> list[int]:
@@ -52,7 +54,7 @@ def unionArray(nums1: list[int], nums2: list[int]) -> list[int]:
         if num not in union:
             union.append(num)
             
-    # Sort manually (using bubble sort - n^2)
+    # Sort manually (using bubble sort - O(n^2))
     n = len(union)
     for i in range(n):
         for j in range(n - i - 1):
