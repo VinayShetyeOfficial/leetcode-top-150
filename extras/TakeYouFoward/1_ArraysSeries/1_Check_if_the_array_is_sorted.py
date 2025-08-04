@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/check-if-the-array-is-sorted-ii
+
 # To check if number list is sorted or not [Ascending or Descending Order]
 
 # Ascending order check
