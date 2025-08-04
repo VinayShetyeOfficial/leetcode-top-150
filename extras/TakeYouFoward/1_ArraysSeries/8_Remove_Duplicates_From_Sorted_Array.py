@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/remove-duplicates-from-sorted-array
+
 # Remove duplicates from sorted array
 
 def removeDuplicates(nums: list[int]) -> list[int]:
