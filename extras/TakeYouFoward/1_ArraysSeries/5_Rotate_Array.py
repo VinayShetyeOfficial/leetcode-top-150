@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/left-rotate-array-by-one
+
 # Rotate Array
 
 def rotateArray(nums: list[int]) -> list[int]:
