@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/single-number---i
+
 # Find_the_number_that_appears_once / Single Number
 
 def singleNumber(nums: list[int]) -> int:
