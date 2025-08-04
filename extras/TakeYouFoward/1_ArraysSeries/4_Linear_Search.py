@@ -1,4 +1,4 @@
-# Linear Search
+# Link: https://takeuforward.org/plus/dsa/problems/linear-search
 
 def searchInsertPos(nums: list[int], target: int) -> int:
     left, right = 0, len(nums) - 1
