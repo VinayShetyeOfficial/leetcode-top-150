@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/move-zeros-to-end
+
 # Move all Zeros to the end of the array
 
 def moveZerosToEnd(nums: list[int]) -> int:
