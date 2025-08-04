@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/maximum-consecutive-ones
+
 # Count Maximum Consecutive One's in the array
 
 def findMaxConsecutiveOnes(nums: list[int]) -> int:
