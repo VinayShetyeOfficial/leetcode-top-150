@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/search-x-in-sorted-array
+
 # Binary Search
 
 def binarySearch(nums: list[int], target: int) -> int:
