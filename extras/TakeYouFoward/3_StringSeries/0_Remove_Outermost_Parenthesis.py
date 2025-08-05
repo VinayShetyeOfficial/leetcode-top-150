@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/remove-outermost-parentheses
+
 # Remove Outermost Parentheses
 
 def removeOuterParentheses(s: str) -> str:
