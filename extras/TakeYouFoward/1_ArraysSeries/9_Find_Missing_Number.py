@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/arrays/find-the-missing-number-in-an-array/
+
 # Find Missing Number
 
 # 1. Using XOR Operation
