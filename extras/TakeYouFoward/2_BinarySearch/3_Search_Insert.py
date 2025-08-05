@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/search-insert-position
+
 # Search Insert
 
 def searchInsert(nums: int, target: int) -> int:
