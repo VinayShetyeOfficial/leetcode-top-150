@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/reverse-every-word-in-a-string
+
 # Reverse words in a given string / Palindrome Check
 
 def reverseWords(s: str) -> str:
