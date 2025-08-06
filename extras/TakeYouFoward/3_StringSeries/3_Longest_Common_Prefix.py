@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/longest-common-prefix
+
 # Longest Common Prefix
 
 def longestCommonPrefix(strings: list[str]) -> str:
