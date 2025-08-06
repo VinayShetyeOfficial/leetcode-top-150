@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/rotate-string
+
 # Check if string `s` can be rotated to form `goal` string
 
 def rotateString(s: str, goal: str) -> bool:
