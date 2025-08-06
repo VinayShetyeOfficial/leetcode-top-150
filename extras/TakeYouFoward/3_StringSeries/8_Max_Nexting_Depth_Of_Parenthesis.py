@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/maximum-nesting-depth-of-the-parentheses
+
 # Maximum Nesting Depth of the Parentheses
 
 def maxDepth(s: str) -> int:
