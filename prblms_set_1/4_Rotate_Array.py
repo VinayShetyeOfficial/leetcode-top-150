@@ -40,6 +40,7 @@ class Solution:
 """
 
 # ===========================================
+
 # Other Direct Solution
 class Solution(object):
     def rotate(self, nums, k):
