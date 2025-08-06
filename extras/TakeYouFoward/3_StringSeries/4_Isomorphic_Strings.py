@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/isomorphic-string
+
 # Isomorphic String
 
 def isomorphicString(s: str, t: str) -> bool:
