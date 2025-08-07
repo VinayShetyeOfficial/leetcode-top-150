@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/pow(x,n)
+
 # Pow(x,n)
 
 def myPow(x: int, n: int):
