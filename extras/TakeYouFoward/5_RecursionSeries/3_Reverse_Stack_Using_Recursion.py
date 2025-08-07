@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/reverse-a-stack
+
 # Reverse Stack using recursion
 
 def reverseStack(stack: list[int]) -> list[int]:
