@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/generate-binary-strings-without-consecutive-1s
+
 # Generate Binary Strings Without Consecutive 1s
 
 def generateBinaryStrings(n: int) -> list[str]:
