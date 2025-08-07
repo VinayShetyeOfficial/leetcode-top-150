@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/count-good-numbers
+
 # Count good Numbers
 
 def count_good_numbers(n: int) -> int:
