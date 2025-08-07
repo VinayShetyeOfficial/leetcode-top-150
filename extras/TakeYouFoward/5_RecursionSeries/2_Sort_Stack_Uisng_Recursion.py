@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/sort-a-stack
+
 # Sort Stack using Recursion
 
 def sortStack(stack: list[int]) -> list[int]:
