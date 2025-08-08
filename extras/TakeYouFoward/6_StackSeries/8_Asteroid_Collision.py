@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/asteroid-collision
+
 # Asteroid Collision
 
 def asteroidCollision(asteroids):
