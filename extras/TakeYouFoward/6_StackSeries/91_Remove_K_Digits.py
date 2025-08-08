@@ -1,4 +1,8 @@
+# Link: https://takeuforward.org/plus/dsa/problems/remove-k-digits
+
 # Remove K Digits
+
+# Given a string nums representing a non-negative integer, and an integer k, find the smallest possible integer after removing k digits from num.
 
 def removeKdigits(nums: str, k: int) -> str:
     if k == len(nums):
