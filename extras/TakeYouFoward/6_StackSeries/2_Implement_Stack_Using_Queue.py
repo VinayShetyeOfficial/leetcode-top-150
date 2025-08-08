@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/implement-stack-using-queue
+
 # Implement Stack using Single Queue
 
 from collections import deque
