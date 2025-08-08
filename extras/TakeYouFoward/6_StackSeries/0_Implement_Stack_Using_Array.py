@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/implement-stack-using-arrays
+
 # Implement Stack using Array
 
 class ArrayStack:
