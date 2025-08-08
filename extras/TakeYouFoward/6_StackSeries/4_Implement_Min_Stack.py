@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/implement-min-stack
+
 # Implement Min Stack
 
 class MinStack:
