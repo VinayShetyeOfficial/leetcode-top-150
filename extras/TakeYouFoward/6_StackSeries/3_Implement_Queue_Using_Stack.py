@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/implement-queue-using-stack
+
 # Implement Queue using Two Stacks
 
 class QueueUsingStacks:
