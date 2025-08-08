@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/trapping-rainwater
+
 # Trapping Rain Water
 
 def trappingRainWater(height: list[int]) -> int:
