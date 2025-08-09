@@ -33,7 +33,35 @@ Explaination:
 # 3 % 2  = 1 → binary = '100'      → 3 // 2 = 1
 # 1 % 2  = 1 → binary = '1100'     → 1 // 2 = 0 (loop ends)
 
-====================================================================
+
+'''
+(1 << 32) means 1 shifted left by 32 bits.
+
+In binary, 1 is ...0001.
+
+Shifting left by 32 bits adds 32 zeros to the right.
+
+So (1 << 32) equals 2^32, which is 4294967296.
+
+Why is it used here?
+
+When you do:
+
+python
+Copy
+Edit
+num = (1 << 32) + num
+and num is negative, you’re converting num into its 32-bit two’s complement unsigned representation.
+
+For example, if num = -53:
+
+(1 << 32) = 4294967296
+
+4294967296 + (-53) = 4294967243
+
+This number is how -53 is stored as a 32-bit unsigned integer in two’s complement form.
+'''
+=====================================================================================================
 
 # ⭐[1] Binary to Integer
 --------------------------
