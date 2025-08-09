@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/largest-rectangle-in-a-histogram
+
 # Area of largest rectangle in Histogram
 
 def largestRectangleArea(heights: list[int]) -> int:
