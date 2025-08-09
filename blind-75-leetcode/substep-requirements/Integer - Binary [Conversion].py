@@ -2,17 +2,20 @@
 --------------------
 
 def int_to_bin(num):
-
+    
     if num == 0:
-        return "0"
+        return '0'
     
-    binary = ""
+    if num < 0:
+        num = (1 << 32) + num  # two's complement for 32-bit
     
-    while num > 0:
-        remainder = num % 2
-        binary = str(remainder) + binary
-        num = num // 2
+    binary = ''
     
+    while num:
+        rem = num % 2
+        binary = str(rem) + binary
+        num //= 2
+        
     return binary
 
 # Driver code
