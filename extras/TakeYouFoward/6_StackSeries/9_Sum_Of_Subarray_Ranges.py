@@ -1,3 +1,5 @@
+# Link: https://takeuforward.org/plus/dsa/problems/sum-of-subarray-ranges
+
 # Sum of Subarray Ranges
 
 def subarrayRanges(nums: list[int]) -> int:
