@@ -1,5 +1,6 @@
-# Frog Jump
 # https://takeuforward.org/plus/dsa/problems/frog-jump
+
+# Frog Jump
 
 def frogJump(heights):
     if not heights:
