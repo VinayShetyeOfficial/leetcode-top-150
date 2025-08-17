@@ -6,7 +6,7 @@ class Solution(object):
         low, high = 0, len(nums) - 1
         
         while low <= high:
-            mid = (low + high)//2
+            mid = (low + high) // 2
             
             if nums[mid] == target:
                 return mid
@@ -16,6 +16,7 @@ class Solution(object):
                 high = mid - 1
                 
         return low
+
 
 # Driver code                
 if __name__ == "__main__":
@@ -32,3 +33,14 @@ if __name__ == "__main__":
     nums3 = [1, 3, 5, 6]
     target3 = 7
     print("Index of target {}: {}".format(target3, obj.searchInsert(nums3, target3)))  # Output: 4
+
+
+"""
+===========================================
+Time Complexity (TC): O(log n)
+- Binary search splits the array in half each iteration.
+
+Space Complexity (SC): O(1)
+- Only constant extra variables used (low, high, mid).
+===========================================
+"""
