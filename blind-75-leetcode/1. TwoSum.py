@@ -20,3 +20,13 @@ if __name__ == "__main__":
     nums = [1,4,7,2,0,9]
     target = 9
     print(obj.sum(nums, target))
+
+
+"""
+Time Complexity (TC): O(n) 
+- We iterate through the list once (n elements). 
+- Dictionary lookups (insertion & search) are O(1) on average.
+
+Space Complexity (SC): O(n) 
+- We store at most n elements in the hash map (num_indices).
+"""
