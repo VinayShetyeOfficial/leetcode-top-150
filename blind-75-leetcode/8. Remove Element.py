@@ -17,6 +17,7 @@ class Solution(object):
         # The length of the array after removing val is insert_pos
         return insert_pos
 
+
 # Driver code        
 if __name__ == "__main__":
     obj = Solution()
@@ -36,4 +37,14 @@ if __name__ == "__main__":
     print(f'Input Array: {nums2}')
     print("Number of elements after removing {}: {}".format(val2, k2))
     print("Updated array:", nums2[:k2])
-   
+
+
+"""
+===========================================
+Time Complexity (TC): O(n)
+- We traverse the array once (n = length of nums).
+
+Space Complexity (SC): O(1)
+- In-place replacement, no extra space required.
+===========================================
+"""
