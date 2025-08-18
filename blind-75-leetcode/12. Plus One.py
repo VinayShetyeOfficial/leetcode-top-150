@@ -6,31 +6,33 @@ class Solution(object):
         if not digits:
             return None
         
+        # Traverse the list from the last digit backwards
         for i in range(len(digits) - 1, -1, -1):
-            if digits[i] < 9:
+            if digits[i] < 9:          # If current digit < 9, just increment and return
                 digits[i] += 1
                 return digits
-            else:
+            else:                      # If current digit = 9, turn it into 0 and continue loop
                 digits[i] = 0
         
-        digits.insert(0, 1)
-        # x = [1]
-        # x.extend(digits)  
+        # If all digits were 9, e.g., [9,9] -> [1,0,0]
+        digits.insert(0, 1)   # Insert 1 at the beginning
         
-        return digits  
-        # return x 
+        return digits
 
 # Driver code
 if __name__ == "__main__":
-    # Example usage:
     obj = Solution()
-    print(obj.plusOne([1, 2, 3]))  
-    print(obj.plusOne([4, 3, 2, 1]))  
-    print(obj.plusOne([9, 9]))  
+    print(obj.plusOne([1, 2, 3]))   # Output: [1, 2, 4]
+    print(obj.plusOne([4, 3, 2, 1]))  # Output: [4, 3, 2, 2]
+    print(obj.plusOne([9, 9]))  # Output: [1, 0, 0]
 
 
-# Sub-steps Requirements
-# ----------------------
+"""
+Time Complexity (TC): O(n) 
+- We may traverse all digits once in the worst case (like [9,9,9,...]).
+- Inserting at the beginning using `insert(0, 1)` is O(n) because all elements shift.
+- So overall still O(n).
 
-# ⭐1. Program to => `Perform append at the beginning of the List`:
-# Link: https://www.geeksforgeeks.org/python-perform-append-at-beginning-of-list/
+Space Complexity (SC): O(1) 
+- We modify the digits list in place. No extra space apart from a few variables.
+"""
