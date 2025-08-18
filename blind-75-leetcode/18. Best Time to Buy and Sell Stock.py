@@ -1,7 +1,11 @@
 # Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
-# Best Time to Buy and Sell Stock
-class Solution(object):
+# ============================================
+# Best Time to Buy and Sell Stock I
+# Single transaction
+# ============================================
+
+class BestTimeBuySellI(object):
     def maxProfit(self, prices):
         min_so_far = prices[0]
         max_profit = 0
@@ -11,19 +15,21 @@ class Solution(object):
             min_so_far = min(min_so_far, current_price)
             
         return max_profit
-        
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    prices = [7,1,5,3,6,4]
-    
-    print(obj.maxProfit(prices))
 
-# =======================================================
+"""
+Time Complexity (TC): O(n)
+- Single pass through the prices list.
 
+Space Complexity (SC): O(1)
+- Only two variables used.
+"""
+
+# ============================================
 # Best Time to Buy and Sell Stock II
+# Multiple transactions
+# ============================================
 
-class Solution(object):
+class BestTimeBuySellII(object):
     def maxProfit(self, prices):
         max_profit = 0
         
@@ -33,10 +39,25 @@ class Solution(object):
                 
         return max_profit
 
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    prices = [7,1,5,3,6,4]
-    
-    print(obj.maxProfit(prices))
+"""
+Time Complexity (TC): O(n)
+- Single pass through the prices list.
 
+Space Complexity (SC): O(1)
+- Only one variable used for accumulation.
+"""
+
+# ============================================
+# Driver Code
+# ============================================
+
+if __name__ == '__main__':
+    prices = [7, 1, 5, 3, 6, 4]
+
+    # Stock I
+    obj1 = BestTimeBuySellI()
+    print("Max Profit (Single Transaction):", obj1.maxProfit(prices))  # Output: 5
+
+    # Stock II
+    obj2 = BestTimeBuySellII()
+    print("Max Profit (Multiple Transactions):", obj2.maxProfit(prices))  # Output: 7
