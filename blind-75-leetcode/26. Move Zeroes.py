@@ -1,29 +1,32 @@
 # Link: https://leetcode.com/problems/move-zeroes/
 
-# Move Zeroes 
-# ⭐ Solution1
---------------
-class Solution:
+from typing import List
+
+# ============================================
+# Solution 1: Two-pointer swap
+# ============================================
+class Solution1:
     def moveZeroes(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
         l = 0
-
         for r in range(len(nums)):
             if nums[r] != 0:
                 nums[l], nums[r] = nums[r], nums[l]
                 l += 1
-
         return nums
 
+"""
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
 
-# ----------------------
-
-# Solution2
-class Solution(object):
-    def moveZeroes(self, nums):
-
+# ============================================
+# Solution 2: Move non-zero elements first, then fill zeros
+# ============================================
+class Solution2:
+    def moveZeroes(self, nums: List[int]) -> None:
         last_non_zero_found_at = 0
         
         for i in range(len(nums)):
@@ -33,45 +36,51 @@ class Solution(object):
                 
         for i in range(last_non_zero_found_at, len(nums)):
             nums[i] = 0
-
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    nums = [0,1,0,3,12]
-    print(obj.moveZeroes(nums))
-
-# ----------------------
-
-# Solution3
-class Solution(object):
-    def moveZeroes(self, nums):
-        
-        nums[:] = [val for val in nums if val != 0] + [0 for i in range(nums.count(0))]
-            
         return nums
 
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    nums = [0,1,0,3,12]
-    print(obj.moveZeroes(nums))
+"""
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
 
+# ============================================
+# Solution 3: Using list comprehension
+# ============================================
+class Solution3:
+    def moveZeroes(self, nums: List[int]) -> None:
+        nums[:] = [val for val in nums if val != 0] + [0] * nums.count(0)
+        return nums
 
-# ----------------------
+"""
+Time Complexity: O(n)
+Space Complexity: O(n) due to creating a new list
+"""
 
-# Another Solution                  => Output Limit Exceede
-class Solution(object):
-    def moveZeroes(self, nums):
+# ============================================
+# Solution 4: Pop and insert (Not efficient)
+# ============================================
+class Solution4:
+    def moveZeroes(self, nums: List[int]) -> None:
         n = len(nums)
         for i in range(n-1, -1, -1):
             if nums[i] == 0:
                 nums.pop(i)
-                print(nums)
                 nums.insert(n-1, 0)
         return nums
 
+"""
+Time Complexity: O(n^2) — inefficient for large lists
+Space Complexity: O(1)
+"""
+
+# ============================================
 # Driver code
+# ============================================
+
 if __name__ == '__main__':
-    obj = Solution()
-    nums = [0,1,0,3,12]
-    print(obj.moveZeroes(nums))
+    nums_list = [0,1,0,3,12]
+
+    print("Solution 1:", Solution1().moveZeroes(nums_list[:]))
+    print("Solution 2:", Solution2().moveZeroes(nums_list[:]))
+    print("Solution 3:", Solution3().moveZeroes(nums_list[:]))
+    print("Solution 4:", Solution4().moveZeroes(nums_list[:]))
