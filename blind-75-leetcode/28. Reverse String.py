@@ -1,26 +1,38 @@
 # Link: https://leetcode.com/problems/reverse-string/description/
 
-# Reverse String
-class Solution(object):
+# ============================================
+# Solution: Two-pointer approach (In-place)
+# ============================================
+class Solution:
     def reverseString(self, s):
+        """
+        Reverses the list of characters in-place.
+        :type s: List[str]
+        :rtype: List[str]
+        """
         low = 0
-        high = len(s)-1
+        high = len(s) - 1
         
-        while low <= high:
+        while low < high:
             s[low], s[high] = s[high], s[low]
             low += 1
             high -= 1
-            
+        
         return s
 
-        # Modify the array in place!
-        # s[:] = s[::-1]
-        # return s
-        # OR
-        # return s.reverse()
+        # Alternate approaches (all in-place):
+        # 1. s[:] = s[::-1]; return s
+        # 2. s.reverse(); return s
 
-# Driver code
+"""
+Time Complexity: O(n) for traversing half of the list
+Space Complexity: O(1) extra space
+"""
+
+# ============================================
+# Driver Code
+# ============================================
 if __name__ == '__main__':
     obj = Solution()
     s = ["h","e","l","l","o"]
-    print(obj.reverseString(s))
+    print("Reversed String:", obj.reverseString(s))
