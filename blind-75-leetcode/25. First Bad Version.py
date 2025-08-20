@@ -1,16 +1,17 @@
 # Link: https://leetcode.com/problems/first-bad-version/description/
 
-# First Bad Version
-# The isBadVersion API is already defined for you.
-# @param version, an integer
-# @return a bool
-# def isBadVersion(version):
-
+# ============================================
 # Simulating the isBadVersion API
+# ============================================
+
 def isBadVersion(version):
-    # Assume the first bad version is randomly chosen for this example
-    first_bad_version = 10  # Example: set it to 10 for consistency in testing
+    # Assume the first bad version is 10 for testing
+    first_bad_version = 10
     return version >= first_bad_version
+
+# ============================================
+# Solution using Binary Search
+# ============================================
 
 class Solution(object):
     def firstBadVersion(self, n):
@@ -24,7 +25,17 @@ class Solution(object):
                 low = mid + 1
         return low
 
+"""
+Time Complexity: O(log n)
+    - Binary search halves the search space each step.
+Space Complexity: O(1)
+    - Only a few variables (low, high, mid) are used.
+"""
+
+# ============================================
 # Driver code
+# ============================================
+
 if __name__ == '__main__':
     obj = Solution()
     n = 20  # Example number of versions
