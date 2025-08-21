@@ -1,14 +1,20 @@
 # Link: https://leetcode.com/problems/reshape-the-matrix/description/
 
+# ============================================
 # Reshape the Matrix
+# ============================================
 import itertools
+import numpy as np
 
-class Solution(object):
+# ---------------------------
+# Solution 1: Using itertools
+# ---------------------------
+class Solution1(object):
     def matrixReshape(self, mat, r, c):
-        # Flattening the original matrix
+        # Flatten the original matrix
         arr = list(itertools.chain(*mat))
         
-        # Checking if reshaping is possible
+        # Check if reshaping is possible
         if len(arr) != r * c:
             return mat
         
@@ -17,27 +23,15 @@ class Solution(object):
         for i in range(r):
             temp = []
             for j in range(c):
-                temp += [arr[index]]
+                temp.append(arr[index])
                 index += 1
-                
             result.append(temp)
-            
         return result
-            
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    r = 1
-    c = 9
-    mat = [[1,2],[3,4],[5,6], [7,8], [9]]
 
-    print(obj.matrixReshape(mat, r, c))
-
-
-# ----------------------
-
-# Another Solution
-class Solution(object):
+# ---------------------------
+# Solution 2: List comprehension
+# ---------------------------
+class Solution2(object):
     def matrixReshape(self, mat, r, c):
         m, n = len(mat), len(mat[0])
         
@@ -45,86 +39,55 @@ class Solution(object):
         if m * n != r * c:
             return mat
         
-        # Flatten the matrix and reshape it
+        # Flatten the matrix and reshape
         flattened = [val for row in mat for val in row]
         reshaped = [flattened[i*c:(i+1)*c] for i in range(r)]
-        
         return reshaped
-            
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    r = 2
-    c = 4
-    mat = [[1,2], [3,4], [5,6], [7,8]]
 
-    print(obj.matrixReshape(mat, r, c))
+# ============================================
+# Sub-steps / Utility Functions
+# ============================================
 
-
-# ====================== #
-# Sub-steps Requirements #
-# ====================== #
-# ⭐ Multi-dimensional Array to 1D Array
-def flatten(array):
+# ⭐ Multi-dimensional array to 1D array (recursive)
+def flatten_recursive(array):
     result = []
-    
     for element in array:
         if isinstance(element, list):
-           result.extend(flatten(element))
+            result.extend(flatten_recursive(element))
         else:
             result.append(element)
-    
     return result
 
-#Multidimensional Array to 1D Array
-array_multid = [[1, 2, [3, 4]], [5, 6], [7, [8, 9]]]
+# ⭐ Flatten using itertools
+def flatten_itertools(array):
+    return list(itertools.chain(*array))
 
-print(flatten(array_multid))
+# ⭐ Flatten / reshape using NumPy
+def flatten_numpy(array, r, c):
+    arr = np.array(array)
+    return arr.reshape((r*c, ))  # For 1D array
+def reshape_numpy(array, r, c):
+    arr = np.array(array)
+    return arr.reshape((r, c))   # For reshaped 2D array
 
-# ----------------------
-# Using inbuilt-functions
-# ⭐ 2D Array to 1D Array
-import itertools
-
-def flatten(array):
+# ============================================
+# Driver Code
+# ============================================
+if __name__ == '__main__':
+    mat1 = [[1,2],[3,4],[5,6],[7,8],[9]]
+    mat2 = [[1,2], [3,4], [5,6], [7,8]]
     
-    result_array = list(itertools.chain(*array))
+    obj1 = Solution1()
+    print("Solution1:", obj1.matrixReshape(mat1, 1, 9))
     
-    return result_array
-
-# Multidimensional Array to 1D Array
-array_2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
-print(flatten(array_2d))
-
-
-# ⭐ 2D Array to 1D Array using Numpy Methods
-import numpy as np
-
-r = 1
-c = 9
-array_2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
-array = np.array(array_2d)
-
-# Reshape to a 1D array
-array = array.reshape((r*c, ))         # <======== Note [for 1 row array] ========
-print(array)
-# Output: [1 2 3 4 5 6 7 8 9]
-
-# ----------------------
-
-# ⭐ 2D Array to 1D Array using Numpy Methods
-import numpy as np
-
-r = 3
-c = 3
-array_2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
-array = np.array(array_2d)
-
-# Reshape to a 1D array
-array = array.reshape((r, c))         # <======== Note [for 1+ row array] ========
-print(array)
-# Output: [1 2 3 4 5 6 7 8 9]
-
+    obj2 = Solution2()
+    print("Solution2:", obj2.matrixReshape(mat2, 2, 4))
+    
+    array_multid = [[1, 2, [3, 4]], [5, 6], [7, [8, 9]]]
+    print("Flatten recursive:", flatten_recursive(array_multid))
+    
+    array_2d = [[1,2,3],[4,5,6],[7,8,9]]
+    print("Flatten itertools:", flatten_itertools(array_2d))
+    
+    print("Flatten NumPy:", flatten_numpy(array_2d, 1, 9))
+    print("Reshape NumPy:", reshape_numpy(array_2d, 3, 3))
