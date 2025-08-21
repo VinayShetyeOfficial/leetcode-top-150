@@ -1,6 +1,8 @@
 # Link: https://leetcode.com/problems/valid-perfect-square/description/
 
+# ============================================
 # Valid Perfect Square
+# ============================================
 class Solution:
     def isPerfectSquare(self, num: int) -> bool:
         if num < 2:
@@ -21,10 +23,19 @@ class Solution:
 
         return False
 
-        # return math.floor(num**0.5)**2 == num          # ⭐ Optional 
+        # Optional one-liner
+        # return math.floor(num**0.5)**2 == num
 
+"""
+Time Complexity: O(log(num)) 
+  - Binary search from 2 to num//2
+Space Complexity: O(1)
+"""
+
+# ============================================
 # Driver code
+# ============================================
 if __name__ == '__main__':
     obj = Solution()
     num = 14
-    print(obj.sPerfectSquare(num))
+    print(obj.isPerfectSquare(num))  # ✅ fixed typo from sPerfectSquare to isPerfectSquare
