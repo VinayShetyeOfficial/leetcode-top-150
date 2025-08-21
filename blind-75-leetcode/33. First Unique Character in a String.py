@@ -1,7 +1,8 @@
 # Link: https://leetcode.com/problems/first-unique-character-in-a-string/description/
 
-# First Unique Character in a String
-
+# ============================================
+# Solution 1: Using fixed-size frequency array
+# ============================================
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         freq = [0] * 26  # 26 lowercase letters
@@ -16,43 +17,67 @@ class Solution:
                 return i
 
         return -1
-    
+
+"""
+Time Complexity: O(n) 
+  - n = len(s), single pass for counting + single pass for finding first unique
+Space Complexity: O(1) 
+  - Fixed array of size 26 for lowercase letters
+"""
+
 # ============================================
-
-# Alternate Solution
-
-class Solution(object):
+# Solution 2: Using string.count (Brute-force)
+# ============================================
+class Solution2(object):
     def firstUniqChar(self, s):
         checked = set()
         for i, c in enumerate(s):
             if c not in checked and s.count(c) == 1:
-                    return i
-            checked.update({c})
-                
-        return  -1         
-        
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    s = "aabb"
-    print(obj.firstUniqChar(s))
+                return i
+            checked.add(c)
+        return -1
+
+"""
+Time Complexity: O(n^2) 
+  - s.count(c) is O(n) and we do it for each character
+Space Complexity: O(n) for the checked set
+"""
 
 # ============================================
-
-# Another Solution
-
-class Solution(object):
+# Solution 3: Using dictionary (hashmap)
+# ============================================
+class Solution3(object):
     def firstUniqChar(self, s):
         char_count = {}
         
+        # Step 1: Count frequency of each char
         for c in s:
-            if c in char_count:
-                char_count[c] += 1
-            else:
-                char_count[c] = 1
+            char_count[c] = char_count.get(c, 0) + 1
                 
+        # Step 2: Find first unique char
         for i, c in enumerate(s):
             if char_count[c] == 1:
                 return i
                 
         return -1
+
+"""
+Time Complexity: O(n) 
+  - Counting + finding first unique pass
+Space Complexity: O(k), k = number of distinct characters in s
+"""
+
+# ============================================
+# Driver Code
+# ============================================
+if __name__ == '__main__':
+    s = "aabbc"
+    
+    obj1 = Solution()
+    print("First unique char index (Solution 1):", obj1.firstUniqChar(s))
+    
+    obj2 = Solution2()
+    print("First unique char index (Solution 2):", obj2.firstUniqChar(s))
+    
+    obj3 = Solution3()
+    print("First unique char index (Solution 3):", obj3.firstUniqChar(s))
