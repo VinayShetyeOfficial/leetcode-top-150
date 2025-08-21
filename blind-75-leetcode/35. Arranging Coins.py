@@ -1,7 +1,9 @@
 # Link: https://leetcode.com/problems/arranging-coins/description/
 
-# Arranging Coins
-class Solution:
+# ============================================
+# Solution 1: Binary Search (Efficient)
+# ============================================
+class Solution1:
     def arrangeCoins(self, n: int) -> int:
         left, right = 0, n
         while left <= right:
@@ -17,28 +19,31 @@ class Solution:
                 
         return right  # 'right' will be at the last valid row count
 
+"""
+Time Complexity: O(log n)
+Space Complexity: O(1)
+"""
+
 # ============================================
-
-# Alternate Solution
-
-class Solution(object):
+# Solution 2: Iterative subtraction
+# ============================================
+class Solution2(object):
     def arrangeCoins(self, n):
         i = 1
-        while n >=0:
+        while n >= 0:
             n -= i
             i += 1
         return i - 1
-    
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    n = 10
-    print(obj.arrangeCoins(n))
+
+"""
+Time Complexity: O(sqrt(n))
+Space Complexity: O(1)
+"""
 
 # ============================================
-
-# Another Solution
-class Solution(object):
+# Solution 3: Step counter method
+# ============================================
+class Solution3(object):
     def arrangeCoins(self, n):
         if n == 1:
             return n
@@ -47,7 +52,7 @@ class Solution(object):
         coins = 1
         
         while n > 0:
-            n = n - coins
+            n -= coins
             coins += 1
             
             if n >= 0:
@@ -56,11 +61,23 @@ class Solution(object):
                 break
             
         return step
-    
-# Driver code
+
+"""
+Time Complexity: O(sqrt(n))
+Space Complexity: O(1)
+"""
+
+# ============================================
+# Driver Code
+# ============================================
 if __name__ == '__main__':
-    obj = Solution()
     n = 10
-    print(obj.arrangeCoins(n))
 
+    obj1 = Solution1()
+    print("Maximum full rows (Solution 1):", obj1.arrangeCoins(n))
 
+    obj2 = Solution2()
+    print("Maximum full rows (Solution 2):", obj2.arrangeCoins(n))
+
+    obj3 = Solution3()
+    print("Maximum full rows (Solution 3):", obj3.arrangeCoins(n))
