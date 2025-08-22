@@ -1,6 +1,6 @@
-# Links: https://leetcode.com/problems/to-lower-case/
+# Link: https://leetcode.com/problems/to-lower-case/
 
-# To Lower Case
+# To Lower Case - Solution 1
 class Solution(object):
     def toLowerCase(self, s):
         result = ''
@@ -16,12 +16,12 @@ class Solution(object):
 if __name__ == '__main__':
     obj = Solution()
     s = "al&phaBET"
-    print(obj.toLowerCase(s))
+    print(obj.toLowerCase(s))  # Output: "al&phabet"
 
 
 # ----------------------
 
-# Another Solution
+# To Lower Case - Solution 2
 class Solution(object):
     def toLowerCase(self, s):
         res = ""
@@ -39,11 +39,10 @@ class Solution(object):
 if __name__ == '__main__':
     obj = Solution()
     s = "Hello"
-    print(obj.toLowerCase(s))
+    print(obj.toLowerCase(s))  # Output: "hello"
 
 
 # ----------------------
-
 # ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
 # ====================== #
 # Sub-steps Requirements #
@@ -52,9 +51,9 @@ if __name__ == '__main__':
 # Finding ASCII value of CHAR value
 char = 'A'
 ascii_value = ord(char)
-print(f"The ASCII value of '{char}' is {ascii_value}") # 65
+print(f"The ASCII value of '{char}' is {ascii_value}")  # 65
 
 # Finding CHAR value for ASCII value
 ascii_value = 65
 char = chr(ascii_value)
-print(f"The character for ASCII value {ascii_value} is '{char}'") # A
+print(f"The character for ASCII value {ascii_value} is '{char}'")  # A
