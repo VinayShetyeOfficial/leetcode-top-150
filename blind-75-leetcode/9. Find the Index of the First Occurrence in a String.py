@@ -20,6 +20,8 @@ class Solution(object):
         # If needle is not found, return -1
         return -1
             
+
+# Driver code
 if __name__ == "__main__":
     obj = Solution()
 
@@ -30,4 +32,16 @@ if __name__ == "__main__":
 
     haystack2 = "leetcode"
     needle2 = "leeto"
-    print("Index of first occurrence:",  obj.strStr(haystack2, needle2))  # Output: -1
+    print("Index of first occurrence:", obj.strStr(haystack2, needle2))  # Output: -1
+
+
+"""
+===========================================
+Time Complexity (TC): O((n-m+1) * m) ~ O(n*m)
+- n = length of haystack, m = length of needle
+- For each starting index in haystack, we may compare up to m characters.
+
+Space Complexity (SC): O(1)
+- No extra space used apart from variables.
+===========================================
+"""
