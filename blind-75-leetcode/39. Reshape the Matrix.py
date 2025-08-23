@@ -1,7 +1,5 @@
-# Link: https://leetcode.com/problems/reshape-the-matrix/description/
-
 # ============================================
-# Reshape the Matrix
+# Reshape the Matrix - LeetCode
 # ============================================
 import itertools
 import numpy as np
@@ -28,6 +26,13 @@ class Solution1(object):
             result.append(temp)
         return result
 
+"""
+Time Complexity (TC): O(m*n) 
+   - m*n elements are iterated while flattening and reshaping
+Space Complexity (SC): O(m*n) 
+   - extra array 'arr' of size m*n + result matrix
+"""
+
 # ---------------------------
 # Solution 2: List comprehension
 # ---------------------------
@@ -44,6 +49,13 @@ class Solution2(object):
         reshaped = [flattened[i*c:(i+1)*c] for i in range(r)]
         return reshaped
 
+"""
+Time Complexity (TC): O(m*n)
+   - flattening and slicing operations go through all elements once
+Space Complexity (SC): O(m*n)
+   - 'flattened' list of size m*n + reshaped list
+"""
+
 # ============================================
 # Sub-steps / Utility Functions
 # ============================================
@@ -58,17 +70,46 @@ def flatten_recursive(array):
             result.append(element)
     return result
 
+"""
+Time Complexity (TC): O(N) 
+   - N = total number of scalar elements
+Space Complexity (SC): O(N) 
+   - result list + recursive call stack depth (worst case O(N))
+"""
+
 # ⭐ Flatten using itertools
 def flatten_itertools(array):
     return list(itertools.chain(*array))
+
+"""
+Time Complexity (TC): O(m*n) 
+   - goes through all elements once
+Space Complexity (SC): O(m*n)
+   - creates new flattened list
+"""
 
 # ⭐ Flatten / reshape using NumPy
 def flatten_numpy(array, r, c):
     arr = np.array(array)
     return arr.reshape((r*c, ))  # For 1D array
+
+"""
+Time Complexity (TC): O(m*n)
+   - converting to NumPy array + reshaping
+Space Complexity (SC): O(m*n)
+   - NumPy stores data in a new array structure
+"""
+
 def reshape_numpy(array, r, c):
     arr = np.array(array)
     return arr.reshape((r, c))   # For reshaped 2D array
+
+"""
+Time Complexity (TC): O(m*n)
+   - conversion + reshape
+Space Complexity (SC): O(m*n)
+   - new NumPy array structure
+"""
 
 # ============================================
 # Driver Code
