@@ -1,8 +1,11 @@
-# https://leetcode.com/problems/min-cost-climbing-stairs/description/
+# ============================================
+# Min Cost Climbing Stairs - LeetCode
+# ============================================
 
-# Min Cost of Climbing Stairs
-
-class Solution(object):
+# ---------------------------
+# Solution 1: Bottom-up DP with two variables (space optimized)
+# ---------------------------
+class Solution1(object):
     def minCostClimbingStairs(self, cost):
         if not cost:
             return 0
@@ -15,33 +18,43 @@ class Solution(object):
             dp0, dp1 = dp1, current_min_cost
         
         return min(dp0, dp1)
-           
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    
-    cost = [1,100,1,1,1,100,1,1,100,1]
-    print(obj.minCostClimbingStairs(cost))
 
-# Another Solution
+"""
+Time Complexity (TC): O(n)
+   - Traverse the cost array once
+Space Complexity (SC): O(1)
+   - Only two variables used to store previous costs
+"""
 
-# =======================================================
-
-class Solution(object):
+# ---------------------------
+# Solution 2: In-place DP (modifying cost array)
+# ---------------------------
+class Solution2(object):
     def minCostClimbingStairs(self, cost):
-        
+        # Update cost array from second last step backwards
         for i in range(len(cost)-3, -1, -1):
             cost[i] += min(cost[i+1], cost[i+2])
         
-        print(cost)
-        
+        # Minimum cost starting from step 0 or 1
         return min(cost[0], cost[1])
-           
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    
-    cost = [1,100,1,1,1,100,1,1,100,1]
-    print(obj.minCostClimbingStairs(cost))
 
+"""
+Time Complexity (TC): O(n)
+   - Traverse the cost array once in reverse
+Space Complexity (SC): O(1)
+   - No extra space used, modifying input array in-place
+"""
+
+# ============================================
+# Driver Code
+# ============================================
+if __name__ == '__main__':
+    cost = [1,100,1,1,1,100,1,1,100,1]
     
+    # Test Solution1
+    obj1 = Solution1()
+    print("Solution1:", obj1.minCostClimbingStairs(cost.copy()))
+    
+    # Test Solution2
+    obj2 = Solution2()
+    print("Solution2:", obj2.minCostClimbingStairs(cost.copy()))
