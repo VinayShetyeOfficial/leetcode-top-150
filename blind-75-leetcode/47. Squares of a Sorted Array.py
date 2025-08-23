@@ -1,8 +1,13 @@
-# Link: https://leetcode.com/problems/squares-of-a-sorted-array/description/
+# ============================================
+# Squares of a Sorted Array - LeetCode
+# ============================================
 
-# Squares of a Sorted Array
+from typing import List
 
-class Solution:
+# ---------------------------
+# Solution 1: Two Pointers (O(n))
+# ---------------------------
+class Solution1:
     def sortedSquares(self, nums: List[int]) -> List[int]:
         n = len(nums)
         result = [0] * n  # Final sorted squares
@@ -11,33 +16,48 @@ class Solution:
 
         while left <= right:
             if abs(nums[left]) > abs(nums[right]):
-                result[pos] = nums[left] * nums[left]
+                result[pos] = nums[left] ** 2
                 left += 1
             else:
-                result[pos] = nums[right] * nums[right]
+                result[pos] = nums[right] ** 2
                 right -= 1
             pos -= 1
 
         return result
-    
-# =======================================================
 
-# Alternate Solution
+"""
+Time Complexity (TC): O(n)
+   - Single pass through the array
+Space Complexity (SC): O(n)
+   - Result array of size n
+"""
 
-class Solution(object):
+# ---------------------------
+# Solution 2: Square + Sort (O(n log n))
+# ---------------------------
+class Solution2(object):
     def sortedSquares(self, nums):
-        
-        nums = [x**2 for x in nums]
-        # nums = list(map(lambda x:x**2, nums))    # Optional
-
-        nums.sort()
-        
+        nums = [x**2 for x in nums]  # Square all elements
+        nums.sort()                   # Sort the squares
         return nums
-        # return sorted([x**2 for x in nums])      # Optional
-    
-# Driver code
+
+"""
+Time Complexity (TC): O(n log n)
+   - Sorting dominates
+Space Complexity (SC): O(n)
+   - List of squared elements
+"""
+
+# ============================================
+# Driver Code
+# ============================================
 if __name__ == '__main__':
-    obj = Solution()
-    nums = [-4,-1,0,3,10]
-    print(obj.sortedSquares(nums))
+    nums = [-4, -1, 0, 3, 10]
     
+    # Test Solution1
+    obj1 = Solution1()
+    print("Solution1:", obj1.sortedSquares(nums.copy()))
+    
+    # Test Solution2
+    obj2 = Solution2()
+    print("Solution2:", obj2.sortedSquares(nums.copy()))
