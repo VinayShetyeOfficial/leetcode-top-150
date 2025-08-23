@@ -1,7 +1,11 @@
-# Link: https://leetcode.com/problems/to-lower-case/
+# ============================================
+# To Lower Case - LeetCode
+# ============================================
 
-# To Lower Case - Solution 1
-class Solution(object):
+# ---------------------------
+# Solution 1: Manual conversion using ASCII values
+# ---------------------------
+class Solution1(object):
     def toLowerCase(self, s):
         result = ''
         for char in s:
@@ -11,42 +15,40 @@ class Solution(object):
             else:
                 result += char
         return result
-        
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    s = "al&phaBET"
-    print(obj.toLowerCase(s))  # Output: "al&phabet"
 
+"""
+Time Complexity (TC): O(n)
+   - Traverse all characters in the string once
+Space Complexity (SC): O(n)
+   - New string 'result' is built of size n
+"""
 
-# ----------------------
-
-# To Lower Case - Solution 2
-class Solution(object):
+# ---------------------------
+# Solution 2: Using Python built-ins (isupper / lower)
+# ---------------------------
+class Solution2(object):
     def toLowerCase(self, s):
         res = ""
-        
         for c in s:
             if c.isupper():
                 res += c.lower()
             else:
                 res += c
-        
         return res
-        # return s.lower()       # Optional
         
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    s = "Hello"
-    print(obj.toLowerCase(s))  # Output: "hello"
+        # Alternatively, the simplest one-liner:
+        # return s.lower()
 
+"""
+Time Complexity (TC): O(n)
+   - Each character is checked and possibly converted
+Space Complexity (SC): O(n)
+   - New string 'res' is created of size n
+"""
 
-# ----------------------
-# ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
-# ====================== #
-# Sub-steps Requirements #
-# ====================== #
+# ============================================
+# Sub-steps / Utility Demonstration
+# ============================================
 
 # Finding ASCII value of CHAR value
 char = 'A'
@@ -57,3 +59,15 @@ print(f"The ASCII value of '{char}' is {ascii_value}")  # 65
 ascii_value = 65
 char = chr(ascii_value)
 print(f"The character for ASCII value {ascii_value} is '{char}'")  # A
+
+# ============================================
+# Driver Code
+# ============================================
+if __name__ == '__main__':
+    obj1 = Solution1()
+    s1 = "al&phaBET"
+    print("Solution1:", obj1.toLowerCase(s1))  # Output: "al&phabet"
+
+    obj2 = Solution2()
+    s2 = "Hello"
+    print("Solution2:", obj2.toLowerCas
