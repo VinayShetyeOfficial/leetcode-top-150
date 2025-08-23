@@ -1,12 +1,15 @@
-# Link: https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/
+# ============================================
+# Find Smallest Letter Greater Than Target - LeetCode
+# ============================================
 
-# Find Smallest Letter Greater Than Target
-class Solution(object):
+# ---------------------------
+# Solution 1: Binary Search
+# ---------------------------
+class Solution1(object):
     def nextGreatestLetter(self, letters, target):
         left, right = 0, len(letters) - 1
         
-        # Edge case: If target is greater than or equal to the last character,
-        # wrap around to the first character
+        # Edge case: wrap around to first character
         if target >= letters[right]:
             return letters[0]
         
@@ -17,37 +20,44 @@ class Solution(object):
             else:
                 right = mid - 1
         
-        # After binary search, 'left' will point to the smallest character greater than target
+        # 'left' points to smallest character greater than target
         return letters[left]
-            
-# Driver code
-if __name__ == '__main__':
-    obj = Solution()
-    
-    letters = ['a', 'b', 'c', 'e', 'f', 'j', 'z']
-    target = "s"
-    print(obj.nextGreatestLetter(letters, target))
 
+"""
+Time Complexity (TC): O(log n)
+   - Binary search over letters array
+Space Complexity (SC): O(1)
+   - Constant extra space
+"""
 
-# ============================================
-
-# Another Solution
-
-class Solution(object):
+# ---------------------------
+# Solution 2: Linear Scan
+# ---------------------------
+class Solution2(object):
     def nextGreatestLetter(self, letters, target):
-        charArr = letters
-        
-        for c in charArr:
+        for c in letters:
             if c > target:
                 return c
-        
         return letters[0]
-            
-# Driver code
+
+"""
+Time Complexity (TC): O(n)
+   - May iterate through all letters in worst case
+Space Complexity (SC): O(1)
+   - Constant extra space
+"""
+
+# ============================================
+# Driver Code
+# ============================================
 if __name__ == '__main__':
-    obj = Solution()
-    
     letters = ['a', 'b', 'c', 'e', 'f', 'j', 'z']
     target = "s"
-    print(obj.nextGreatestLetter(letters, target))
     
+    # Test Solution1
+    obj1 = Solution1()
+    print("Solution1:", obj1.nextGreatestLetter(letters, target))  # Output: 'z'
+    
+    # Test Solution2
+    obj2 = Solution2()
+    print("Solution2:", obj2.nextGreatestLetter(letters, target))  # Output: 'z'
