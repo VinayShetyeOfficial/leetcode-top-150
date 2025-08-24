@@ -1,25 +1,37 @@
-# Link: https://leetcode.com/problems/n-th-tribonacci-number/description/
+# ============================================
+# N-th Tribonacci Number - LeetCode
+# ============================================
 
-# N-th Tribonacci Number
-class Solution(object):
-    def tribonacci(self, n):
-        res = []
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        # Base cases
+        if n == 0:
+            return 0
+        elif n == 1 or n == 2:
+            return 1
         
-        for i in range(0, n+2):
-            if i == 0:
-                res += [0]
-            elif i == 1:
-                res += [1]
-            elif i == 2:
-                res += [1]
-            else:
-                res += [res[i-1] + res[i-2] + res[i-3]]
+        # Initialize first three Tribonacci numbers
+        t0, t1, t2 = 0, 1, 1
         
-        return res[n]
+        # Iteratively compute Tribonacci numbers
+        for _ in range(3, n + 1):
+            t_next = t0 + t1 + t2
+            t0, t1, t2 = t1, t2, t_next  # Shift numbers
         
-# Driver code
+        return t2
+
+# ============================================
+# Driver Code
+# ============================================
 if __name__ == '__main__':
     obj = Solution()
     n = 25
-    print(obj.tribonacci(n))
-    
+    print(obj.tribonacci(n))  # Output: 1389537
+
+"""
+Time Complexity (TC): O(n)
+- Loop runs from 3 to n, so linear time.
+
+Space Complexity (SC): O(1)
+- Only 3 variables (t0, t1, t2) are used to store previous Tribonacci numbers.
+"""
