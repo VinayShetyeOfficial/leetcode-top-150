@@ -1,14 +1,13 @@
-# Link: https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping/
+# ============================================
+# Decrypt String from Alphabet to Integer Mapping - LeetCode
+# ============================================
 
-# Decrypt String from Alphabet to Integer Mapping
 class Solution(object):
     def freqAlphabets(self, s):
+        # Mapping for single digits '1' to '9'
         charSet1 = {str(i): chr(96 + i) for i in range(1, 10)}
-        # {'1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f', '7': 'g', '8': 'h', '9': 'i'}
+        # Mapping for two digits with '#' '10#' to '26#'
         charSet2 = {str(i) + '#': chr(96 + i) for i in range(10, 27)}
-        # {'10#': 'j', '11#': 'k', '12#': 'l', '13#': 'm', '14#': 'n', '15#': 'o', 
-        # '16#': 'p', '17#': 'q', '18#': 'r', '19#': 's', '20#': 't', '21#': 'u', 
-        # '22#': 'v', '23#': 'w', '24#': 'x', '25#': 'y', '26#': 'z'}
 
         i = 0
         res = ""
@@ -22,8 +21,18 @@ class Solution(object):
                 
         return res
 
-# Driver code
+# ============================================
+# Driver Code
+# ============================================
 if __name__ == '__main__':
     obj = Solution()
     s = "10#11#12"
     print(obj.freqAlphabets(s))  # Output: "jkab"
+
+"""
+Time Complexity (TC): O(n)
+- We traverse the string once, so linear time with respect to string length n.
+
+Space Complexity (SC): O(1)
+- Dictionaries have fixed size (26 letters). Only result string uses extra space.
+"""
