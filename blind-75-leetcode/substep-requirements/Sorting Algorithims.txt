@@ -1,8 +1,6 @@
+# ============================================
 # Bubble Sort
--------------
-👉 Repeatedly compares adjacent elements and swaps them if they’re in the wrong order.
-It "bubbles up" the largest element to the end in each round.
-
+# ============================================
 def bubble_sort(arr):
     n = len(arr)
     arr = arr.copy()  # Keeps original list safe
@@ -17,14 +15,10 @@ def bubble_sort(arr):
             break
     return arr
 
-num_sorted = bubble_sort(num)
 
-================================================================
-
-
-Insertion Sort
---------------
-
+# ============================================
+# Insertion Sort
+# ============================================
 def insertion_sort(arr):
     arr = arr.copy()  # Keeps original list safe
     n = len(arr)
@@ -32,39 +26,28 @@ def insertion_sort(arr):
     for i in range(1, n):
         key = arr[i]
         j = i - 1
-
         while j >= 0 and arr[j] > key:
             arr[j + 1] = arr[j]
             j -= 1
-
         arr[j + 1] = key
-
     return arr
 
-================================================================
 
+# ============================================
 # Merge Sort
-------------
-
+# ============================================
 def merge_sort(arr):
     if len(arr) <= 1:
-        return arr  # Base case: list is already sorted
+        return arr  # Base case: already sorted
 
     mid = len(arr) // 2
-
-    # Split the list into two halves
     left_half = merge_sort(arr[:mid])
     right_half = merge_sort(arr[mid:])
-
-    # Merge the sorted halves
     return merge(left_half, right_half)
-
 
 def merge(left, right):
     result = []
     i = j = 0
-
-    # Compare elements and build the result list
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
             result.append(left[i])
@@ -72,68 +55,52 @@ def merge(left, right):
         else:
             result.append(right[j])
             j += 1
-
-    # Add leftover elements from both halves
     result.extend(left[i:])
     result.extend(right[j:])
-
     return result
 
 
-if __name__ == '__main__':
-    nums = [12, 11, 13, 5, 6]
-    sorted_nums = merge_sort(nums)
-    print(f'Sorted: {sorted_nums}')
-
-
-================================================================
-
+# ============================================
 # Quick Sort
-------------
-
-# Quick Sort
+# ============================================
 def quick_sort(arr):
-    # Base case: a list with 0 or 1 element is already sorted
     if len(arr) <= 1:
         return arr
-
-    # Choose a pivot (here we take the last element)
-    pivot = arr[-1]
+    pivot = arr[-1]  # last element as pivot
     left = []
     right = []
-
-    # Partitioning
-    for i in range(len(arr) - 1):  # exclude the pivot
+    for i in range(len(arr) - 1):
         if arr[i] <= pivot:
             left.append(arr[i])
         else:
             right.append(arr[i])
-
-    # Recursively sort and combine
     return quick_sort(left) + [pivot] + quick_sort(right)
 
 
-if __name__ == '__main__':
+# ============================================
+# Driver Code
+# ============================================
+if __name__ == "__main__":
     nums = [10, 7, 8, 9, 1, 5]
-    sorted_nums = quick_sort(nums)
-    print(f'Sorted: {sorted_nums}')
+    
+    print("Bubble Sort:", bubble_sort(nums))
+    print("Insertion Sort:", insertion_sort(nums))
+    print("Merge Sort:", merge_sort(nums))
+    print("Quick Sort:", quick_sort(nums))
 
 
+"""
+============================================
+Time Complexity (TC):
+- Bubble Sort: O(n^2), Best Case O(n) if already sorted
+- Insertion Sort: O(n^2), Best Case O(n) if already sorted
+- Merge Sort: O(n log n) in all cases
+- Quick Sort: Avg O(n log n), Worst O(n^2) if pivot is poor
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Space Complexity (SC):
+- Bubble Sort: O(1)
+- Insertion Sort: O(1)
+- Merge Sort: O(n) (extra space for merging)
+- Quick Sort: O(log n) (recursive stack), Worst O(n)
+============================================
+"""
