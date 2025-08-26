@@ -1,8 +1,9 @@
-# Integer to Binary 
---------------------
+# ============================================
+# Integer to Binary & Binary to Integer
+# ============================================
 
-def int_to_bin(num):
-    
+# Integer ➝ Binary Conversion
+def int_to_bin(num: int) -> str:
     if num == 0:
         return '0'
     
@@ -10,117 +11,77 @@ def int_to_bin(num):
         num = (1 << 32) + num  # two's complement for 32-bit
     
     binary = ''
-    
     while num:
         rem = num % 2
         binary = str(rem) + binary
         num //= 2
-        
     return binary
 
-# Driver code
-if __name__ == "__main__":
-    num = 12
-    res = int_to_bin(num)
-    print("{} to binary: {}".format(num, res))
 
-
-Explaination:
--------------
-# Step-by-step for num = 12:
-# 12 % 2 = 0 → binary = '0'        → 12 // 2 = 6
-# 6 % 2  = 0 → binary = '00'       → 6 // 2 = 3
-# 3 % 2  = 1 → binary = '100'      → 3 // 2 = 1
-# 1 % 2  = 1 → binary = '1100'     → 1 // 2 = 0 (loop ends)
-
-
-'''
-(1 << 32) means 1 shifted left by 32 bits.
-
-In binary, 1 is ...0001.
-
-Shifting left by 32 bits adds 32 zeros to the right.
-
-So (1 << 32) equals 2^32, which is 4294967296.
-
-Why is it used here?
-
-When you do:
-
-python
-Copy
-Edit
-num = (1 << 32) + num
-and num is negative, you’re converting num into its 32-bit two’s complement unsigned representation.
-
-For example, if num = -53:
-
-(1 << 32) = 4294967296
-
-4294967296 + (-53) = 4294967243
-
-This number is how -53 is stored as a 32-bit unsigned integer in two’s complement form.
-'''
-=====================================================================================================
-
-# ⭐[1] Binary to Integer
---------------------------
-
-def bin_to_int(num):
-    
+# Binary ➝ Integer Conversion (Approach 1)
+def bin_to_int(binary: str) -> int:
     res = 0
-    num = num[::-1]
-    
-    for i in range(len(num)):
-        res += 2**(i) if num[i] == '1' else 0
-    
-    
+    binary = binary[::-1]  # reverse string for position mapping
+    for i in range(len(binary)):
+        if binary[i] == '1':
+            res += 2 ** i
     return res
 
-# ============== OR ==============
 
-def bin_to_int(num):
-    
+# Binary ➝ Integer Conversion (Approach 2)
+def bin_to_int_alt(binary: str) -> int:
     res = 0
-    for i in range(len(num)):
-        res += 2**(len(num)-i-1) if num[i] == "1" else 0
-    
+    for i in range(len(binary)):
+        if binary[i] == "1":
+            res += 2 ** (len(binary) - i - 1)
     return res
 
-if __name__ == '__main__':
-    print(bin_to_int("1101"))
 
-
-*********************************
-
-# [2] Binary to Integer
------------------------
-
-def is_binary(num):
+# Binary ➝ Integer Conversion (Approach 3: Validation + digits math)
+def is_binary(num: int) -> bool:
     num_str = str(num)
     return all(digit in '01' for digit in num_str)
 
-def bin_to_int(binary):
+def bin_to_int_with_validation(binary: int) -> None:
     if not is_binary(binary):
         print("Input number not in binary format!")
         return
 
     binary = int(binary)
     result, power = 0, 0
-
     while binary:
         result += (binary % 10) * (2 ** power)
         binary //= 10
         power += 1
-
     print(result)
 
-# Driver code
-if __name__ == '__main__':
-    bin_to_int(100)
-    bin_to_int(101)
-    bin_to_int(100141)
+
+# ============================================
+# Driver Code
+# ============================================
+if __name__ == "__main__":
+    # Integer ➝ Binary
+    num = 12
+    print(f"{num} to binary: {int_to_bin(num)}")  # 1100
+    num = -53
+    print(f"{num} to binary (32-bit two's complement): {int_to_bin(num)}")
+
+    # Binary ➝ Integer
+    print(bin_to_int("1101"))         # 13
+    print(bin_to_int_alt("1011"))     # 11
+    bin_to_int_with_validation(100)   # 4
+    bin_to_int_with_validation(101)   # 5
+    bin_to_int_with_validation(100141)  # Invalid
 
 
+"""
+============================================
+Time Complexity (TC):
+- int_to_bin: O(log n)  → because we divide num by 2 until it becomes 0
+- bin_to_int (all versions): O(k), where k = length of binary string
 
-
+Space Complexity (SC):
+- int_to_bin: O(log n) for storing binary string
+- bin_to_int: O(1) extra space
+============================================
+"""
