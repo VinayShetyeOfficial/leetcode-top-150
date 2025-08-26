@@ -7,7 +7,7 @@ class Solution:
         if n % 2 == 0 or n % 3 == 0:
             return False
 
-        # Find factors from 5 to sqrt(n), skipping multiples of 2 and 3
+        # Check divisors from 5 to sqrt(n), skipping multiples of 2 and 3
         i = 5
         while i * i <= n:
             if n % i == 0 or n % (i + 2) == 0:
@@ -18,6 +18,11 @@ class Solution:
 
 if __name__ == "__main__":
     obj = Solution()
-    print(obj.isPrime(2))   # ✅ True
-    print(obj.isPrime(11))  # ✅ True
-    print(obj.isPrime(29))  # ✅ True
+    print(obj.isPrime(2))    # ✅ True
+    print(obj.isPrime(11))   # ✅ True
+    print(obj.isPrime(29))   # ✅ True
+    print(obj.isPrime(100))  # ❌ False
+
+
+# Time Complexity: O(√n)
+# Space Complexity: O(1)
