@@ -5,59 +5,63 @@
 import random
 
 # Find Largest Element in Array
-def compute(nums: list[int]) -> int:
-    print(nums)
-    nums = set(nums)
-    largestNum = next(iter(nums))
- 
+def findLargest(nums: list[int]) -> int:
+    """
+    Returns the largest element in the array
+    """
+    if not nums:
+        return None  # Edge case: empty list
+
+    largestNum = nums[0]  # Initialize largest with first element
+
     for num in nums:
         if num > largestNum:
-            lagestNum = num
+            largestNum = num
             
     return largestNum
 
-if __name__ == '__main__':
-    arr = [random.randint(1, 100) for _ in range(10)]
-    ans = compute(arr)
-    print(ans)
 
-#===================================================
-# Error
-class Solution:
-    def largestElement(self, nums):
-        nums = set(nums)
-        largestNumber = nums[0]
-
-        for num in nums:
-            if num > largestNumber:        # TypeError: 'set' object is not subscriptable
-                largestNumber = num
-
-        return largestNumber
-#===================================================
-
-import random
-
-# Find Second-Largest/Second-Smallest Element in Array
-def compute(nums: list[int]) -> None:
+# Find Second-Largest and Second-Smallest Element in Array
+def findSecondElements(nums: list[int]) -> tuple[int, int]:
+    """
+    Returns a tuple (second_smallest, second_largest)
+    """
     smallest = second_smallest = float('inf')
-    largest = second_largestt = float('-inf')
+    largest = second_largest = float('-inf')
     
     for num in nums:
+        # Update smallest and second smallest
         if num < smallest:
             second_smallest = smallest
             smallest = num
         elif smallest < num < second_smallest:
             second_smallest = num
-            
+
+        # Update largest and second largest
         if num > largest:
             second_largest = largest
             largest = num
         elif largest > num > second_largest:
             second_largest = num
 
-    print(second_smallest)
-    print(second_largest)
+    return (second_smallest, second_largest)
 
+
+# Driver Code
 if __name__ == '__main__':
     arr = [random.randint(1, 100) for _ in range(10)]
-    ans = compute(arr)
+    print("Array:", arr)
+
+    largest = findLargest(arr)
+    print("Largest Element:", largest)
+
+    second_smallest, second_largest = findSecondElements(arr)
+    print("Second Smallest:", second_smallest)
+    print("Second Largest:", second_largest)
+
+
+# Time Complexity (TC):
+# - findLargest: O(N) -> Traverse all elements once
+# - findSecondElements: O(N) -> Traverse all elements once
+# Space Complexity (SC):
+# - O(1) -> Constant extra space, no extra arrays used
