@@ -1,31 +1,31 @@
 # Link: https://takeuforward.org/plus/dsa/problems/second-largest-element
 
-# Find Second Smallest and Second Largest Element in an array
+# Find Second Smallest Element in an array
 
 def secondSmallest(arr, n):
-    if (n < 2):
+    if n < 2:
         return -1
     small = float('inf')
     second_small = float('inf')
     for i in range(n):
-        if (arr[i] < small):
+        if arr[i] < small:
             second_small = small
             small = arr[i]
-        elif (arr[i] < second_small and arr[i] != small):
+        elif arr[i] < second_small and arr[i] != small:
             second_small = arr[i]
     return second_small
 
-# Second Largest
+# Find Second Largest Element in an array
 def secondLargest(arr, n):
-    if (n < 2):
+    if n < 2:
         return -1
     large = float('-inf')
     second_large = float('-inf')
     for i in range(n):
-        if (arr[i] > large):
+        if arr[i] > large:
             second_large = large
             large = arr[i]
-        elif (arr[i] > second_large and arr[i] != large):
+        elif arr[i] > second_large and arr[i] != large:
             second_large = arr[i]
     return second_large
 
@@ -38,3 +38,13 @@ if __name__ == "__main__":
     print("Second smallest is", sS)
     print("Second largest is", sL)
 
+
+'''
+Time Complexity (TC):
+-------------------
+- Both secondSmallest() and secondLargest() iterate through the array once → O(N)
+
+Space Complexity (SC):
+--------------------
+- O(1) → Only a few variables are used, no extra arrays or lists
+'''
