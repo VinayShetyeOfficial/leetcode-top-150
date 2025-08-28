@@ -3,56 +3,54 @@
 # To check if number list is sorted or not [Ascending or Descending Order]
 
 # Ascending order check
-for index in range(1, len(nums)):
-    if nums[index - 1] > nums[index]:        # Check for instance where condition fails
-        return False
-return True
+def isAscending(nums):
+    for index in range(1, len(nums)):
+        if nums[index - 1] > nums[index]:        # Check for instance where condition fails
+            return False
+    return True
 
 # Descending order check
-for index in range(1, len(nums)):
-    if nums[index - 1] < nums[index]:        # Check for instance where condition fails
-        return False
-return True
+def isDescending(nums):
+    for index in range(1, len(nums)):
+        if nums[index - 1] < nums[index]:        # Check for instance where condition fails
+            return False
+    return True
 
-# For General:
+# General function: Check if array is sorted (ascending or descending)
 def isSorted(arr):
     return all(arr[i] <= arr[i+1] for i in range(len(arr)-1)) or \
            all(arr[i] >= arr[i+1] for i in range(len(arr)-1))
 
 
+# Driver Code
+if __name__ == '__main__':
+    arr1 = [1, 2, 3, 4, 5]    # Ascending
+    arr2 = [5, 4, 3, 2, 1]    # Descending
+    arr3 = [1, 3, 2, 4]       # Not sorted
+    arr4 = [7]                # Single element
+
+    print(isAscending(arr1))  # True
+    print(isDescending(arr2)) # True
+    print(isSorted(arr3))     # False
+    print(isSorted(arr4))     # True
+
 
 '''
 Special Case:
 -------------
-You’re testing it with a single-element list: [1].
+Single-element list [1] or empty list []
 
-Step-by-step:
-len(arr) = 1
+- len(arr) = 1 → range(len(arr) - 1) = range(0)
+- Loop has zero iterations
+- all([]) returns True (vacuous truth)
+- Function returns True
 
-range(len(arr) - 1) = range(0)
-→ This means the loop has zero iterations.
+Time Complexity (TC):
+-------------------
+- isAscending / isDescending: O(N)
+- isSorted (with all()): O(N) for each check → worst case O(2N) ~ O(N)
 
-So both generators inside all():
-
-all(arr[i] <= arr[i + 1] for i in range(len(arr) - 1))
-
-all(arr[i] >= arr[i + 1] for i in range(len(arr) - 1))
-
-...are working over an empty sequence.
-
-
-
-Q) Why does all([]) return True?
---------------------------------
-This is a very important point.
-
-all([]) returns True by definition (this is called vacuous truth in logic).
-
-It means: "There is no element that makes the condition false."
-Since there are no elements at all, none violate the condition.
-
-So what happens here?
-all(...) for both ascending and descending returns True (because they're checking an empty list of comparisons).
-
-So the function returns True. 
+Space Complexity (SC):
+--------------------
+- O(1) → No extra space used except for variables
 '''
