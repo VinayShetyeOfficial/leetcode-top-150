@@ -11,20 +11,22 @@ if __name__ == "__main__":
     ans = unionArray(nums1, nums2)
     print("Union Result:", ans)
 
+# Time Complexity (TC): O((N+M) log(N+M)) -> set creation O(N+M), sorting O((N+M) log(N+M))
+# Space Complexity (SC): O(N+M) -> for set and result array
+
+
 # ===================================================================
 
-# Alternative approach:
+# Alternative approach using dictionary
 
-# 🫴🏾 Dictionary avoids duplicates keys 🫳🏾
 def unionArray(nums1: list[int], nums2: list[int]) -> list[int]:
     freq = {}
     for num in nums1 + nums2:
         freq[num] = True
         
-    # Convert keys to list and sort using basic sort (if built-in sort is not allowed)
     keys = list(freq.keys())
     
-    # Optional: if you want to sort manually, else use keys.sort()
+    # Manual sorting (bubble sort)
     for i in range(len(keys)):
         for j in range(i + 1, len(keys)):
             if keys[i] > keys[j]:
@@ -38,9 +40,14 @@ if __name__ == "__main__":
     ans = unionArray(nums1, nums2)
     print("Union Result:", ans)
 
+# Time Complexity (TC): O((N+M)^2) -> due to bubble sort
+# Space Complexity (SC): O(N+M) -> for dictionary keys
+
+
 # ===================================================================
 
-# Without use of inbuilt methods
+# Without using inbuilt methods
+
 def unionArray(nums1: list[int], nums2: list[int]) -> list[int]:
     union = []
     
@@ -54,7 +61,7 @@ def unionArray(nums1: list[int], nums2: list[int]) -> list[int]:
         if num not in union:
             union.append(num)
             
-    # Sort manually (using bubble sort - O(n^2))
+    # Manual bubble sort
     n = len(union)
     for i in range(n):
         for j in range(n - i - 1):
@@ -69,3 +76,6 @@ if __name__ == "__main__":
     nums2 = [1, 5, 7, 8, 8]
     ans = unionArray(nums1, nums2)
     print("Union Result:", ans)
+
+# Time Complexity (TC): O((N+M)^2) -> due to checking duplicates + bubble sort
+# Space Complexity (SC): O(N+M) -> for the union array
