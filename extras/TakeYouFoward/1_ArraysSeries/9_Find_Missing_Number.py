@@ -22,6 +22,9 @@ if __name__ == "__main__":
     ans = missingNumber(nums)
     print("Missing Number:", ans)
 
+# Time Complexity (TC): O(N) -> traversing array twice
+# Space Complexity (SC): O(1) -> using only a few extra variables
+
 
 
 # 2. Using Arithmetic Operation
@@ -35,3 +38,6 @@ if __name__ == "__main__":
     nums = [0, 1, 2, 3, 5, 6]
     ans = missingNumber(nums)
     print("Missing Number:", ans)
+
+# Time Complexity (TC): O(N) -> sum(nums) takes O(N)
+# Space Complexity (SC): O(1) -> using only a few extra variables
