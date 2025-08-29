@@ -16,4 +16,5 @@ if __name__ == "__main__":
     ans = singleNumber(nums)
     print("Single Number:", ans)
 
-# Single Number: 3
+# Time Complexity (TC): O(N) -> traversing the array once
+# Space Complexity (SC): O(1) -> using only a few extra variables
