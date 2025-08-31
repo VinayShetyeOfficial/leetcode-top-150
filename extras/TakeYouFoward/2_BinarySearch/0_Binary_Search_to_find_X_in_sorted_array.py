@@ -23,3 +23,9 @@ if __name__ == "__main__":
     target = 5
     ans = binarySearch(nums, target)
     print(f'Search Index: {ans}')
+
+
+"""
+Time Complexity (TC): O(log N) -> binary search divides the array in half each iteration
+Space Complexity (SC): O(1) -> constant extra space used
+"""
