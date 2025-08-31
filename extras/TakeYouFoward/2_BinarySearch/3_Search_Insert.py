@@ -2,7 +2,7 @@
 
 # Search Insert
 
-def searchInsert(nums: int, target: int) -> int:
+def searchInsert(nums: list[int], target: int) -> int:
     left, right = 0, len(nums) - 1
     
     while left <= right:
@@ -22,3 +22,9 @@ if __name__ == "__main__":
     target = 17
     indx = searchInsert(arr, target)
     print("The insert index is:", indx)
+
+
+"""
+Time Complexity (TC): O(log N) -> binary search over the array
+Space Complexity (SC): O(1) -> constant extra space used
+"""
