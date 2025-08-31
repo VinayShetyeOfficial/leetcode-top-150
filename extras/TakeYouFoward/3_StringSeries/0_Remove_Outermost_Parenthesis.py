@@ -32,3 +32,9 @@ if __name__ == "__main__":
     s2 = "()()"
     ans2 = removeOuterParentheses(s2)
     print(f'Input: "{s2}", Result: "{ans2}"')
+
+
+"""
+Time Complexity (TC): O(N) -> single pass through the string
+Space Complexity (SC): O(N) -> for storing the result list
+"""
