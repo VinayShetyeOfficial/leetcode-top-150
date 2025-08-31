@@ -2,11 +2,11 @@
 
 # Floor and Ceil in Sorted Array
 
-def findFloorCeil(nums, x):
+def findFloorCeil(nums: list[int], x: int) -> tuple[int, int]:
     n = len(nums)
     floor, ceil = -1, -1
 
-    # Floor: largest <= x
+    # Floor: largest number <= x
     low, high = 0, n - 1
     while low <= high:
         mid = (low + high) // 2
@@ -16,7 +16,7 @@ def findFloorCeil(nums, x):
         else:
             high = mid - 1
 
-    # Ceil: smallest >= x
+    # Ceil: smallest number >= x
     low, high = 0, n - 1
     while low <= high:
         mid = (low + high) // 2
@@ -36,18 +36,7 @@ if __name__ == "__main__":
     print(fl, ce)  # Output: 4 7
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+"""
+Time Complexity (TC): O(log N) -> binary search for floor and ceil separately
+Space Complexity (SC): O(1) -> constant extra space used
+"""
