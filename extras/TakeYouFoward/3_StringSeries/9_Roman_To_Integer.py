@@ -1,8 +1,9 @@
 # Link: https://takeuforward.org/plus/dsa/problems/roman-to-integer
 
-# Roman to Integer
+# Convert Roman numeral string to Integer
 
 def roman_to_int(s: str) -> int:
+    # Mapping of Roman numerals to integers
     roman_map = {
         'I': 1,
         'V': 5,
@@ -16,9 +17,11 @@ def roman_to_int(s: str) -> int:
     total = 0
     prev_value = 0
 
+    # Traverse the Roman numeral from right to left
     for char in reversed(s):
         curr_value = roman_map[char]
 
+        # Subtract if smaller value comes before a larger one
         if curr_value < prev_value:
             total -= curr_value
         else:
@@ -31,6 +34,6 @@ def roman_to_int(s: str) -> int:
 
 # Example usage
 if __name__ == '__main__':
-    string = "LXV"  
+    string = "LXV"  # 50 + 10 + 5 = 65
     result = roman_to_int(string)
     print(f'Integer value of {string}: {result}')
