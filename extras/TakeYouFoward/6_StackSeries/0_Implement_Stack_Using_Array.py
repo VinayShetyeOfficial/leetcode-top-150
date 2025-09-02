@@ -4,25 +4,31 @@
 
 class ArrayStack:
     def __init__(self):
+        """Initialize an empty stack using a list"""
         self.stack = []
     
     def push(self, x: int) -> None:
+        """Push element onto the stack"""
         self.stack.append(x)
 
     def pop(self) -> int:
+        """Remove and return the top element from the stack"""
         if not self.isEmpty():
             return self.stack.pop()
-        return None  # Optional: handle empty pop safely
+        return None  # Return None if stack is empty
 
     def top(self) -> int:
+        """Return the top element without removing it"""
         if not self.isEmpty():
             return self.stack[-1]
-        return None  # Optional: handle empty top safely
+        return None  # Return None if stack is empty
 
     def size(self) -> int:
+        """Return current size of stack"""
         return len(self.stack)
 
     def isEmpty(self) -> bool:
+        """Check whether the stack is empty"""
         return len(self.stack) == 0
 
 
@@ -46,3 +52,14 @@ if __name__ == '__main__':
     print(f'Stack Size: {stack.size()}')
     print(f'Is Stack Empty: {stack.isEmpty()}')
 
+"""
+Time Complexity:
+- push(x): O(1)
+- pop(): O(1)
+- top(): O(1)
+- size(): O(1)
+- isEmpty(): O(1)
+
+Space Complexity:
+- O(N), where N is the number of elements in the stack
+"""
