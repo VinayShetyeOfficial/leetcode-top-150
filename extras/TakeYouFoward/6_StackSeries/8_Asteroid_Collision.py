@@ -3,6 +3,7 @@
 # Asteroid Collision
 
 def asteroidCollision(asteroids):
+    """Function to simulate collisions among asteroids"""
     stack = []
 
     for asteroid in asteroids:
@@ -21,6 +22,7 @@ def asteroidCollision(asteroids):
 
     return stack
 
+
 # ----------- Test Driver Code -----------
 if __name__ == '__main__':
     test_cases = [
@@ -36,3 +38,9 @@ if __name__ == '__main__':
     for asteroids in test_cases:
         ans = asteroidCollision(asteroids)
         print(f'Asteroids: {asteroids} -> Result: {ans}')
+
+
+"""
+Time Complexity: O(n), where n is the number of asteroids (each asteroid is pushed/popped at most once)
+Space Complexity: O(n), for the stack to store surviving asteroids
+"""
