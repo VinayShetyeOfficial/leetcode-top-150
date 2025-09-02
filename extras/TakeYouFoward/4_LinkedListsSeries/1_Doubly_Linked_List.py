@@ -53,4 +53,23 @@ if __name__ == '__main__':
     ll.insert(40)
     ll.insert(50)
     ll.printList()
+
+"""
+TC & SC Analysis
+
+insert(data):
+- In the worst case, we traverse the entire list to find the last node.
+- Time Complexity: O(n), where n = number of nodes in the list.
+- Space Complexity: O(1), since we only use a constant amount of extra space.
+
+printList():
+- Forward Traversal visits all n nodes once.
+- Backward Traversal also visits all n nodes once.
+- Time Complexity: O(n), where n = number of nodes.
+- Space Complexity: O(1), since only pointers are used for traversal.
+
+Overall:
+- Time Complexity: O(n) for both insert and print operations.
+- Space Complexity: O(1) (excluding the space used for storing nodes).
+"""
             
