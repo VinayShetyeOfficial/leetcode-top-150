@@ -40,3 +40,14 @@ if __name__ == '__main__':
     ll.insert(30)
 
     ll.print_list()
+
+
+"""
+Time Complexity (TC):
+- Insert: O(n) in worst case (since we traverse till the end of list)
+- Print: O(n) for traversing all nodes
+
+Space Complexity (SC):
+- O(1) auxiliary space (only a few pointers used)
+- O(n) total space if we consider the linked list storage
+"""
