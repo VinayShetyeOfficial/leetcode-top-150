@@ -36,3 +36,9 @@ if __name__ == '__main__':
     for i, case in enumerate(test_cases):
         result = isValid(case)
         print(f'Test {i+1}: "{case}" → {result}')
+
+
+"""
+Time Complexity: O(n), where n is the length of the input string
+Space Complexity: O(n), for the stack storing unmatched brackets
+"""
