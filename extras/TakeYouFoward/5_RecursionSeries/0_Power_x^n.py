@@ -1,11 +1,13 @@
 # Link: https://takeuforward.org/plus/dsa/problems/pow(x,n)
 
-# Pow(x,n)
+# Pow(x,n) - Fast Exponentiation
 
 def myPow(x: int, n: int):
     def helper(x, n):
-        if x == 0: return 0
-        if n == 0: return 1
+        if x == 0: 
+            return 0
+        if n == 0: 
+            return 1
         
         res = helper(x, n // 2)
         res = res * res
@@ -20,3 +22,7 @@ if __name__ == '__main__':
     n = 10
     ans = myPow(x, n)
     print(f'{x} ^ {n}: {ans}')
+
+
+# Time Complexity: O(log n) 
+# Space Complexity: O(log n) due to recursion stack
