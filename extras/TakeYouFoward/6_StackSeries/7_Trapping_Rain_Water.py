@@ -3,7 +3,9 @@
 # Trapping Rain Water
 
 def trappingRainWater(height: list[int]) -> int:
-    if not height: return 0
+    """Function to calculate total trapped rain water"""
+    if not height: 
+        return 0
 
     left, right = 0, len(height) - 1
     max_left = height[left]
@@ -21,6 +23,7 @@ def trappingRainWater(height: list[int]) -> int:
             total_water += max_right - height[right]
     return total_water
 
+
 # ----------- Test Driver Code -----------
 if __name__ == '__main__':
     heights1 = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
@@ -29,10 +32,14 @@ if __name__ == '__main__':
     heights4 = [3, 0, 0, 2, 0, 4]
     heights5 = [1, 0, 1]
 
-
     print(f'Total Rain Water Units (1): {trappingRainWater(heights1)}')   # Expected: 6
     print(f'Total Rain Water Units (2): {trappingRainWater(heights2)}')   # Expected: 9
     print(f'Total Rain Water Units (3): {trappingRainWater(heights3)}')   # Expected: 2
     print(f'Total Rain Water Units (4): {trappingRainWater(heights4)}')   # Expected: 10
     print(f'Total Rain Water Units (5): {trappingRainWater(heights5)}')   # Expected: 1
 
+
+"""
+Time Complexity: O(n), where n is the number of elements in the height array (single pass using two pointers)
+Space Complexity: O(1), only constant extra space is used
+"""
