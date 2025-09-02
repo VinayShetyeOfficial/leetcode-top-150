@@ -6,25 +6,30 @@ from collections import deque
 
 class StackUsingQueue:
     def __init__(self):
+        """Initialize an empty queue"""
         self.q = deque()
 
     def push(self, x):
+        """Push element x onto stack"""
         self.q.append(x)
         # Rotate the queue to bring the new element to the front
         for _ in range(len(self.q) - 1):
             self.q.append(self.q.popleft())
 
     def pop(self):
+        """Removes the element on top of the stack and returns it"""
         if not self.isEmpty():
             return self.q.popleft()
         return None
 
     def peek(self):
+        """Get the top element of the stack"""
         if not self.isEmpty():
             return self.q[0]
         return None
 
     def isEmpty(self):
+        """Check whether the stack is empty"""
         return len(self.q) == 0
 
 
@@ -48,3 +53,14 @@ if __name__ == '__main__':
     print(f"\nIs Stack Empty after all pops?: {stack.isEmpty()}")
     print(f"Top Element now: {stack.peek()}")
     print(f"Pop when empty: {stack.pop()}")
+
+
+"""
+Time Complexity:
+- push(): O(n) due to queue rotation
+- pop(): O(1)
+- peek(): O(1)
+- isEmpty(): O(1)
+
+Space Complexity: O(n) for storing elements in the queue
+"""
