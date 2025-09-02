@@ -23,3 +23,9 @@ if __name__ == '__main__':
     arr = [3, 10, 4, 2, 1, 2, 6, 1, 7, 2, 9]
     ans = nextLargerElement(arr)
     print(f'Next Greater Element Result:\n{ans}')
+
+
+"""
+Time Complexity: O(n^2), where n is the number of elements in the array (nested loops)
+Space Complexity: O(n), for the result array
+"""
