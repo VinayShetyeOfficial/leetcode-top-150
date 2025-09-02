@@ -12,6 +12,14 @@ def count_good_numbers(n: int) -> int:
     
     
 if __name__ == '__main__':
-    n = 
+    n = 50
     ans = count_good_numbers(n)
     print(f'Length of count of good digits: {ans}')
+
+
+"""
+Time Complexity: O(log n) 
+- due to modular exponentiation (pow with mod).
+Space Complexity: O(1) 
+- only a few variables used, no extra space.
+"""
