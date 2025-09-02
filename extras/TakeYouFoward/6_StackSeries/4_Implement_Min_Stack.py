@@ -55,3 +55,14 @@ if __name__ == '__main__':
     print("Full Stack:", stack.stack)
     print(f'Top Value: {stack.top()}')
     print(f'Min Stack Value: {stack.getMin()}')
+
+
+"""
+Time Complexity:
+- push(): O(1)
+- pop(): O(1)
+- top(): O(1)
+- getMin(): O(1)
+
+Space Complexity: O(n), where n is the number of elements in the stack
+"""
