@@ -48,3 +48,15 @@ class LinkedList:
                 return True
             current = current.next
         return False
+
+
+"""
+Time Complexity:
+- insert(): O(n) in worst case (traverse till end), O(1) if list empty
+- print_list(): O(n)
+- list_length(): O(n)
+- find_val(): O(n) in worst case (when element at end or not found)
+
+Space Complexity:
+- O(1) for all operations (no extra space apart from pointers)
+"""
