@@ -20,7 +20,7 @@ def largestRectangleArea(heights: list[int]) -> int:
     return maxArea
 
 
-# 🔽 Test Cases
+# ----------- Test Cases -----------
 if __name__ == '__main__':
     test_cases = [
         ([2, 1, 5, 6, 2, 3], 10),      # Classic example
@@ -31,7 +31,7 @@ if __name__ == '__main__':
         ([4, 3, 2, 1], 6),             # Decreasing bars
         ([1, 2, 3, 4, 5], 9),          # Increasing bars
         ([1], 1),                      # Single bar
-        ([3, 5, 1, 7, 5, 9], 15),      # Custom case from your main code
+        ([3, 5, 1, 7, 5, 9], 15),      # Custom case
     ]
 
     for i, (heights, expected) in enumerate(test_cases, 1):
@@ -39,4 +39,10 @@ if __name__ == '__main__':
         print(f'Test Case {i}: Input = {heights}')
         print(f'Expected: {expected}, Got: {result}')
         print('Pass ✅\n' if result == expected else 'Fail ❌\n')
-        
+
+
+"""
+Time Complexity: O(n), where n is the number of bars in the histogram. 
+                 Each bar is pushed and popped from the stack at most once.
+Space Complexity: O(n), for the stack used to store indices and heights.
+"""
