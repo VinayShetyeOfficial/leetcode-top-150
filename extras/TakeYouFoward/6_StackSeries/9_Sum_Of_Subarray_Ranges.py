@@ -24,9 +24,15 @@ if __name__ == '__main__':
         [4, 1, 2],        # Output: 7
         [1],              # Output: 0
         [2, 2, 2],        # Output: 0
-        [1, 5, 2, 4, 3],  # Try this
+        [1, 5, 2, 4, 3],  # Output: 23
     ]
 
     for nums in test_cases:
         ans = subarrayRanges(nums)
         print(f'Nums: {nums} -> Subarray Ranges Sum: {ans}')
+
+
+"""
+Time Complexity: O(n^2), where n is the length of the array (nested loops over subarrays)
+Space Complexity: O(1), constant extra space used
+"""
