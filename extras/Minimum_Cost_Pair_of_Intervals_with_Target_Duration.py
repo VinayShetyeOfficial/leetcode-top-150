@@ -1,6 +1,17 @@
 # Minimum Cost Pair of Intervals with Target Duration
 
 def findMinCost(timeAvl, startTime, endTime, cost):
+    """
+    Problem:
+    Given n intervals with startTime, endTime, and cost, find the minimum cost
+    to pick two intervals such that their total duration equals timeAvl.
+
+    Approach:
+    - Calculate length of each interval: length = endTime[i] - startTime[i] + 1
+    - Check all pairs of intervals to see if their total length equals timeAvl.
+    - Keep track of minimum sum of their costs.
+    """
+    
     n = len(startTime)
     intervals = []
 
@@ -8,7 +19,7 @@ def findMinCost(timeAvl, startTime, endTime, cost):
     for i in range(n):
         length = endTime[i] - startTime[i] + 1
         intervals.append((length, cost[i]))
-    print(intervals)
+    # print(intervals)  # Debugging removed for final version
     min_cost = float('inf')
 
     # Check pairs of intervals
@@ -20,27 +31,27 @@ def findMinCost(timeAvl, startTime, endTime, cost):
     return min_cost if min_cost != float('inf') else -1
 
 
+# 🔽 Test Cases
 if __name__ == '__main__':
-    # Example usage (from Sample Case 0)
-    timeAvl_0 = 5
-    startTime_0 = [1, 1, 5, 1]
-    endTime_0 = [3, 2, 6, 2]
-    cost_0 = [4, 5, 1, 4]
-    result_0 = findMinCost(timeAvl_0, startTime_0, endTime_0, cost_0)
-    print(f"Sample Case 0 Result: {result_0}")
+    test_cases = [
+        # (timeAvl, startTime, endTime, cost, expected)
+        (5, [1, 1, 5, 1], [3, 2, 6, 2], [4, 5, 1, 4], 2),
+        (7, [1, 2, 4, 5], [2, 3, 8, 9], [2, 3, 4, 10], 6),
+        (2, [4, 2, 3], [6, 4, 5], [3, 1, 4], -1),
+        (4, [1,2,3], [2,3,4], [1,2,3], 3),  # 2+2=4, cost 1+2=3
+        (3, [1,1,2], [1,2,3], [5,3,4], 8),  # Only one pair sum 3
+    ]
 
-    # Example usage (from Sample Case 1)
-    timeAvl_1 = 7
-    startTime_1 = [1, 2, 4, 5]
-    endTime_1 = [2, 3, 8, 9]
-    cost_1 = [2, 3, 4, 10]
-    result_1 = findMinCost(timeAvl_1, startTime_1, endTime_1, cost_1)
-    print(f"Sample Case 1 Result: {result_1}")
+    for i, (timeAvl, startTime, endTime, cost, expected) in enumerate(test_cases, 1):
+        result = findMinCost(timeAvl, startTime, endTime, cost)
+        print(f"Test Case {i}: Expected = {expected}, Got = {result}")
+        print("Pass ✅\n" if result == expected else "Fail ❌\n")
 
-    # Example usage (from Sample Case 2)
-    timeAvl_2 = 2
-    startTime_2 = [4, 2, 3]
-    endTime_2 = [6, 4, 5]
-    cost_2 = [3, 1, 4]
-    result_2 = findMinCost(timeAvl_2, startTime_2, endTime_2, cost_2)
-    print(f"Sample Case 2 Result: {result_2}")
+"""
+Time Complexity (TC):
+- O(n^2), where n = number of intervals.
+  We check all pairs of intervals.
+
+Space Complexity (SC):
+- O(n), for storing intervals with their lengths and costs.
+"""
