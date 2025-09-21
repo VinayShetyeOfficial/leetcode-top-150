@@ -19,7 +19,6 @@ class Solution:
         # If goal has moved to the start, we can reach the end
         return goal == 0
 
-
 """
 ✅ Time Complexity: O(n)
 👉 Single pass through the array from right to left.
