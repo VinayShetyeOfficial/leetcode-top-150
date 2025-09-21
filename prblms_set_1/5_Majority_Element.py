@@ -27,7 +27,6 @@ class Solution:
 👉 No extra space used; only two variables (res, count).
 """
 
-
 # ===========================================
 # Base Solution (Not Fast)
 class Solution:
