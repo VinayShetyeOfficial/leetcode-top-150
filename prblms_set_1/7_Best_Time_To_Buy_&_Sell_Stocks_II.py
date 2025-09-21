@@ -18,7 +18,6 @@ class Solution:
 
         return profit
 
-
 """
 ✅ Time Complexity: O(n)
 👉 Single pass through the array.
