@@ -58,6 +58,5 @@ Time Complexity (TC):
 
 Space Complexity (SC):
 - O(1), constant space usage.
-  Only counters and variables are used, no extra data structures.
-  
+  Only counters and variables are used, no extra data structures. 
 """
