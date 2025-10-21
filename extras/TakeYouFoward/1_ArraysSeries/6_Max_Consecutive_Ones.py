@@ -3,18 +3,17 @@
 # Count Maximum Consecutive 1's in an array
 
 def findMaxConsecutiveOnes(nums: list[int]) -> int:
-    count = 0
-    max_consecutive_count = 0
+    count, max_count = 0, 0
     
-    for i in range(len(nums)):
-        if nums[i] == 1:
+    for num in nums:
+        if num == 1:
             count += 1
         else:
             count = 0
-        
-        max_consecutive_count = max(max_consecutive_count, count)
-        
-    return max_consecutive_count
+            
+        max_count = max(max_count, count)
+    
+    return max_count
 
 if __name__ == "__main__":
     nums = [1, 1, 0, 1, 1, 1]
