@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
 # 2. Using Arithmetic Operation
 def missingNumber(nums: list[int]) -> int:
-    n = len(nums)
+    n = len(nums)   # len(nums) + 1  - if numbers start from 1, 2, 3...
     expected_total = (n * (n + 1)) // 2
     actual_total = sum(nums)
     return expected_total - actual_total
